@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Slide:
+  = @diapositiva.slide
+%p
+  %b Titulo:
+  = @diapositiva.titulo
+%p
+  %b Link:
+  = @diapositiva.link
+
+= link_to 'Edit', edit_diapositiva_path(@diapositiva)
+\|
+= link_to 'Back', diapositivas_path

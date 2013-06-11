@@ -1,0 +1,21 @@
+%h1 Listing tipos
+
+%table
+  %tr
+    %th Nombre
+    %th Imagen
+    %th
+    %th
+    %th
+
+  - @tipos.each do |tipo|
+    %tr
+      %td= tipo.nombre
+      %td= tipo.imagen
+      %td= link_to 'Show', tipo
+      %td= link_to 'Edit', edit_tipo_path(tipo)
+      %td= link_to 'Destroy', tipo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tipo', new_tipo_path

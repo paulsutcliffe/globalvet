@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @tipo.nombre
+%p
+  %b Imagen:
+  = @tipo.imagen
+
+= link_to 'Edit', edit_tipo_path(@tipo)
+\|
+= link_to 'Back', tipos_path

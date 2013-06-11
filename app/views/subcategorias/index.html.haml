@@ -1,0 +1,21 @@
+%h1 Listing subcategorias
+
+%table
+  %tr
+    %th Nombre
+    %th Imagen
+    %th
+    %th
+    %th
+
+  - @subcategorias.each do |subcategoria|
+    %tr
+      %td= subcategoria.nombre
+      %td= subcategoria.imagen
+      %td= link_to 'Show', subcategoria
+      %td= link_to 'Edit', edit_subcategoria_path(subcategoria)
+      %td= link_to 'Destroy', subcategoria, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Subcategoria', new_subcategoria_path
