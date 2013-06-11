@@ -1,3 +1,4 @@
+# coding: utf-8
 require "bundler/capistrano"
 require "rvm/capistrano"
 
@@ -28,6 +29,9 @@ namespace :bundler do
   desc "|DarkRecipes| Runs bundle install on the app server (internal task)"
   task :install, :roles => :app, :except => { :no_release => true } do
     run "cd #{current_path} && bundle install --deployment --without=development test"
+    if File.exist? "/#{current_path}/bin/unicorn"
+      run "cd #{current_path} && bundle install -—binstubs"
+    end
   end
 end
 
@@ -41,8 +45,8 @@ namespace :deploy do
     set :db_pass, Capistrano::CLI.password_prompt("Password: ")
     set :db_name, Capistrano::CLI.ui.ask("Database name: ")
 
-    run "mysql --user=root --password=#{root_password} -e "CREATE DATABASE IF NOT EXISTS #{db_name}""
-    run "mysql --user=root --password=#{root_password} -e "GRANT ALL PRIVILEGES ON #{db_name}.* TO '#{db_user}'@'localhost' IDENTIFIED BY '#{db_pass}' WITH GRANT OPTION""
+    run "mysql --user=root --password=#{root_password} -e CREATE DATABASE IF NOT EXISTS #{db_name}"
+    run "mysql --user=root --password=#{root_password} -e GRANT ALL PRIVILEGES ON #{db_name}.* TO '#{db_user}'@'localhost' IDENTIFIED BY '#{db_pass}' WITH GRANT OPTION"
   end
 
   task :setup_config, roles: :app do
@@ -51,7 +55,6 @@ namespace :deploy do
     end
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
-    sudo "bundle install -—binstubs"
   end
   before "deploy:cold", "deploy:create_database"
   after "deploy:setup", "deploy:setup_config"
