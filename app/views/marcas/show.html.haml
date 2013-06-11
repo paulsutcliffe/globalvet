@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Logo:
+  = @marca.logo
+%p
+  %b Link:
+  = @marca.link
+
+= link_to 'Edit', edit_marca_path(@marca)
+\|
+= link_to 'Back', marcas_path

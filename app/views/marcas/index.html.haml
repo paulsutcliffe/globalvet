@@ -1,0 +1,21 @@
+%h1 Listing marcas
+
+%table
+  %tr
+    %th Logo
+    %th Link
+    %th
+    %th
+    %th
+
+  - @marcas.each do |marca|
+    %tr
+      %td= marca.logo
+      %td= marca.link
+      %td= link_to 'Show', marca
+      %td= link_to 'Edit', edit_marca_path(marca)
+      %td= link_to 'Destroy', marca, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Marca', new_marca_path
