@@ -4,6 +4,8 @@ class CreateProductos < ActiveRecord::Migration
       t.string :nombre
       t.text :descripcion
       t.string :archivo_pdf
+      t.integer :tipo_id
+      t.integer :subcategoria_id
 
       t.timestamps
     end
