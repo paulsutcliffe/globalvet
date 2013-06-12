@@ -1,5 +1,7 @@
 Globalvet::Application.routes.draw do
 
+  get "quienes_somos/index"
+
   resources :marcas
 
   resources :categorias do
