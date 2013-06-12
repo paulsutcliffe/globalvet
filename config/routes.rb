@@ -1,5 +1,7 @@
 Globalvet::Application.routes.draw do
 
+  devise_for :admins
+
   get "quienes_somos/index"
 
   resources :marcas
