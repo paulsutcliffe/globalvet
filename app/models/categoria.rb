@@ -4,4 +4,6 @@ class Categoria < ActiveRecord::Base
   friendly_id :nombre, use: :slugged
 
   has_many :subcategorias
+
+  mount_uploader :imagen, ImagenUploader
 end

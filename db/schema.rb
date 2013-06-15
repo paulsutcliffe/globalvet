@@ -69,14 +69,18 @@ ActiveRecord::Schema.define(:version => 20130612052302) do
     t.string   "titulo"
     t.text     "contenido"
     t.string   "imagen"
+    t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "noticias", ["slug"], :name => "index_noticias_on_slug", :unique => true
 
   create_table "productos", :force => true do |t|
     t.string   "nombre"
     t.text     "descripcion"
     t.string   "archivo_pdf"
+    t.string   "imagen"
     t.integer  "tipo_id"
     t.integer  "subcategoria_id"
     t.datetime "created_at",      :null => false

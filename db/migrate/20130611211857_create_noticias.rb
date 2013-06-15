@@ -4,8 +4,10 @@ class CreateNoticias < ActiveRecord::Migration
       t.string :titulo
       t.text :contenido
       t.string :imagen
+      t.string :slug
 
       t.timestamps
     end
+    add_index :noticias, :slug, unique: true
   end
 end

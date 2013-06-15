@@ -4,5 +4,7 @@ class Tipo < ActiveRecord::Base
   friendly_id :nombre, use: :slugged
 
   has_many :productos
-  belongs_to :categoria
+  belongs_to :subcategoria
+
+  mount_uploader :imagen, ImagenUploader
 end

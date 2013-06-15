@@ -6,4 +6,6 @@ class Subcategoria < ActiveRecord::Base
   has_many :tipos
   has_many :productos
   belongs_to :categoria
+
+  mount_uploader :imagen, ImagenUploader
 end
