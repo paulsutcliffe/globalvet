@@ -49,7 +49,7 @@ gem "devise"
 gem "mini_magick"
 gem "carrierwave"
 gem "nifty-generators"
-gem "faker", "~> 1.1.2", :group => :test
+gem "faker", "~> 1.1.2", :group => [:test, :development]
 gem "capybara", "~> 2.0.2", :group => :test
 gem "database_cleaner", "~> 0.9.1", :group => :test
 gem "launchy", "~> 2.2.0", :group => :test

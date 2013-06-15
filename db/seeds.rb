@@ -1,7 +1,41 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'factory_girl'
+require 'database_cleaner'
+
+DatabaseCleaner.strategy = :truncation
+
+# then, whenever you need to clean the DB
+DatabaseCleaner.clean
+
+FactoryGirl.create :admin
+
+6.times do
+  FactoryGirl.create :categoria
+end
+
+6.times do
+  FactoryGirl.create :contacto
+end
+
+3.times do
+  FactoryGirl.create :diapositiva
+end
+
+12.times do
+  FactoryGirl.create :marca
+end
+
+6.times do
+  FactoryGirl.create :noticia
+end
+
+6.times do
+  FactoryGirl.create :producto
+end
+
+6.times do
+  FactoryGirl.create :subcategoria
+end
+
+6.times do
+  FactoryGirl.create :tipo
+end
