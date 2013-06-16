@@ -66,25 +66,29 @@ form {margin: 0}
   }
 }
 .info-company {
-  .address:before,
-  .phone:before,
-  .email:before {@include icons}
+  .address:before, .address .before, 
+  .phone:before, .phone .before,
+  .email:before, .email .before {@include icons}
 
-  .address:before {background-position: 0 -19px}
-  .phone:before {background-position: 0 -38px}
-  .email:before {background-position: 0 -56px}
+  .address:before, .address .before {background-position: 0 -19px}
+  .phone:before, .phone .before {background-position: 0 -38px}
+  .email:before, .email .before {background-position: 0 -56px}
 
 }
 
 .info-web {float: right; text-align: right}
 #main-footer {
-  height: 160px; position: relative; top: -50px; z-index: 20; padding: 75px 0 25px; @include box-sizing(border-box);
+  height: 160px; position: relative; top: 0px; z-index: 20; padding: 75px 0 25px; @include box-sizing(border-box);
   p, a, span {color: white; @extend .font-pt-4; font-size: $small}
 
 }
 
-#content {z-index: 40; background: white;
-  .region-inner {min-height: 400px; background: $bg-content white; padding-bottom: 50px; 
-
+#content {z-index: 40; 
+  .region-inner {
+    background: white;
+    min-height: 400px; 
+    &:after, &.after {content:" "; display: block; width: 890px; height: 185px; background: $bg-content; 
+      @include absolute(left, bottom, -10px, -60px);
+    }
   }
 }
