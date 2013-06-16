@@ -9,5 +9,21 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+@import "bootstrap";
+
+@import "compass/css3";
+@import "compass/utilities";
+
+@import "variables.css.scss";
+@import "mixins.css.scss";
+@import "layout.css.scss";
+
+@import url(http://fonts.googleapis.com/css?family=Comfortaa:300);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa:400);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa:700);
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:700);
+

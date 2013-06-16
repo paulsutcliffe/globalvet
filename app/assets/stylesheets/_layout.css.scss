@@ -1,0 +1,90 @@
+body {font-family: $comfortaa; background: $red; overflow-y: scroll}
+#site-wrapper {background: $bg-fondo; -pie-background: $bg-fondo-pie; @include css3pie; position: relative; z-index: 60}
+h1, h2, h3, h4, h5, h6 {line-height: 100%; @extend .font-comfortaa-3; margin: 0}
+form {margin: 0}
+
+.main-menu {
+  float: left; border-bottom: 10px solid $gold; 
+  ul {margin: 0; float: left;
+    li {
+      float: left; list-style: none; background: $bg-menu-bevel; padding-right: 2px; position: relative;
+      a, span {
+        background: $bg-menu; text-align: center; color: $blue;
+        width: 160px; height: 41px; padding: 10px 0 0; float: left;
+        float: left; @include box-sizing(border-box); overflow: hidden;
+        @extend .font-pt-7;
+        &:hover {
+          background: $bg-menu-on;
+        }
+      }
+      span {
+          background: $bg-menu-on;
+      }
+      &.first a,
+      &.first span {width: 105px; @extend .radius-top-left;
+        &:before {@include icons;}
+      }
+      &.last {
+        background: none; padding-right: 0;
+        a, span {width: 115px; @extend .radius-top-right}
+      }
+      @include submenu;
+      &:hover {
+        .submenu {@include transition-1; @include display-true; top: 100%}
+      }
+    }
+  }
+}
+.header-search {
+  @include absolute(right, top, 0, 70px); background: $search-header; @include size(245px, 45px);
+  form {
+    input[type="text"] {@include absolute(right, top, 10px, 12px);
+    @include size(125px, auto); padding: 0 8px 0 4px; background: none;  border: 0;
+    @include box-shadow(0, 0, 0, transparent)}
+    input[type="submit"] {@include absolute(top, left, 1px, 2px); @include size(83px, 40px); 
+    border: 0; padding: 0; background: none}
+  }
+}
+
+#main-footer {background: $red}
+.slogan {font-size: 23px; color: white; margin-top: 28px}
+#main-header {
+  height: 240px; position: relative; z-index: 60;
+  .header-inner {
+    height: 190px; padding-top: 45px; @include box-sizing(border-box)
+  }
+}
+
+.region-inner {
+  width: 870px; position: relative
+}
+
+.info-company,
+.info-web {@include makeColumn(5); margin: 0;
+  p {
+    span {display: block}
+  }
+}
+.info-company {
+  .address:before,
+  .phone:before,
+  .email:before {@include icons}
+
+  .address:before {background-position: 0 -19px}
+  .phone:before {background-position: 0 -38px}
+  .email:before {background-position: 0 -56px}
+
+}
+
+.info-web {float: right; text-align: right}
+#main-footer {
+  height: 160px; position: relative; top: -50px; z-index: 20; padding: 75px 0 25px; @include box-sizing(border-box);
+  p, a, span {color: white; @extend .font-pt-4; font-size: $small}
+
+}
+
+#content {z-index: 40; background: white;
+  .region-inner {min-height: 400px; background: $bg-content white; padding-bottom: 50px; 
+
+  }
+}

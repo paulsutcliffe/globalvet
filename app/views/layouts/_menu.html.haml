@@ -1,0 +1,29 @@
+%ul
+  %li.first
+    = link_to_unless_current 'Inicio', '/' do
+      %span Inicio 
+  %li
+    = link_to_unless_current '¿Quiénes Somos?', 'http://www.google.com' do
+      %span ¿Quiénes Somos?
+  %li
+    = link_to_unless_current 'Productos', 'http://www.google.com' do
+      %span Productos
+    %ul.submenu
+      %li
+        = link_to_unless_current 'Apc', '/' do
+          %span Apc
+      %li
+        = link_to_unless_current 'Shappar', 'http://www.google.com' do
+          %span Shappar
+      %li
+        = link_to_unless_current 'Nobel', 'http://www.google.com' do
+          %span Nobel
+  %li
+    = link_to_unless_current 'Representados', 'http://www.google.com' do
+      %span Representados
+  %li
+    = link_to_unless_current 'Global News', 'http://www.google.com' do
+      %span Global News
+  %li.last
+    = link_to_unless_current 'Contacto', 'http://www.google.com' do
+      %span Contacto

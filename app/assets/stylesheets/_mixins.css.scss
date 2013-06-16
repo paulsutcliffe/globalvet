@@ -1,0 +1,162 @@
+
+
+@mixin submenu {
+  .submenu {
+    width: 100%; 
+    width: -moz-calc(100% - 2px); width: -webkit-calc(100% - 2px); width: -o-calc(100% - 2px); width: calc(100% - 2px); 
+    @include display-false; 
+    @include absolute(left, top, 0, -100px);
+    li {
+      clear: left; width: 100%; padding: 0; background: none;
+      a, span {width: 100%; color: white; text-transform: uppercase; @extend .font-pt-4}
+      a {
+        background: $filter-gold;
+        &:hover {
+          background: $filter-red;
+        }
+      }
+      span {
+        background: $filter-red;
+      } 
+    }
+  }
+}
+
+@mixin icons {
+  content: ""; width: 15px; height: 15px; background: $icons; display: block; @include inline-block;
+  margin-right: 5px; @include relative(left, top, 0, 3px);
+  @extend .ico-menu-home;
+}
+
+.ico-menu-home {
+  background-position: 0 0;
+}
+
+@mixin transition-1 {
+  -moz-transition: 0.8s $easeInOutBack all; -webkit-transition: 0.8s $easeInOutBack all; 
+  -o-transition: 0.8s $easeInOutBack all; transition: 0.8s $easeInOutBack all
+}
+
+
+// fonts
+.font-comfortaa-3,
+.font-confortaa-4,
+.font-comfortaa-7 {font-family: $comfortaa}
+
+.font-comfortaa-3 {font-weight: 300}
+.font-confortaa-4 {font-weight: 400}
+.font-comfortaa-7 {font-weight: 700}
+
+.font-pt-4,
+.font-pt-7 {font-family: $pt}
+
+.font-pt-4 {font-weight: 400}
+.font-pt-7 {font-weight: 700}
+
+
+.radius-top-left {
+  @include border-top-left-radius(10px);
+  overflow: hidden;
+}
+.radius-top-right {
+  @include border-top-right-radius(10px);
+  overflow: hidden;
+}
+
+
+
+
+
+// en evaluación
+@mixin display-false {
+  visibility: hidden; opacity: 0;
+}
+@mixin display-true {
+  visibility: visible; opacity: 1;
+}
+
+@mixin inline-block-left($separation) {
+  text-align: right;
+  li {margin-right: $separation}
+  li, a {@include inline-block}
+}
+
+@mixin inline-block-right($separation) {
+  text-align: right;
+  li {margin-left: $separation}
+  li, a {@include inline-block}
+}
+
+// core
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6 IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+@mixin full-width {
+  width: 100%; float: left; clear: left;
+}
+
+@mixin size($width, $height) {
+  width: $width; height: $height;
+}
+
+@mixin absolute($side-horizontal, $side-vertical, $coord-x, $coord-y) {
+  position: absolute;
+  #{$side-vertical}: $coord-y;
+  #{$side-horizontal}: $coord-x;
+}
+@mixin relative($side-vertical, $side-horizontal, $coord-y, $coord-x) {
+  position: relative;
+  #{$side-vertical}: $coord-y;
+  #{$side-horizontal}: $coord-x;
+}
+
+@mixin inline-block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; vertical-align: top;
+  float: none;
+}
+
+@mixin min-height($value) {
+  min-height: $value;
+  *height: auto !important;
+  height: $value;
+}
+
+@mixin box-sizing($value) {
+  -moz-box-sizing: $value; -webkit-box-sizing: $value; -o-box-sizing: $value; box-sizing: $value;
+  behavior: url(/assets/ie-support/Schepp-box-sizing-polyfill/boxsizing.htc);
+
+  /* content-box 
+    border-box */
+}
+
+@mixin clearfix2 {
+  content: "."; display: block; line-height: 0; clear: both; visibility: hidden; height: 0;
+  &:after {
+    *zoom: 1;
+  }
+}
+
+@mixin css3pie {
+  behavior: url(/assets/ie-support/PIE-1.0.0/PIE.htc);
+}
+
+// core css3 animations
+$easeInBack: cubic-bezier(0.600, -0.280, 0.735, 0.045);
+$easeInCirc: cubic-bezier(0.600, 0.040, 0.980, 0.335);
+$easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+$easeInExpo: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+$easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$easeInOutExpo: cubic-bezier(1.000, 0.000, 0.000, 1.000);
+$easeInOutQuad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+$easeInOutQuart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+$easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+$easeInOutSine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+
