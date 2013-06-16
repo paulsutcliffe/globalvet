@@ -1,14 +1,18 @@
 body {font-family: $comfortaa; background: $red; overflow-y: scroll}
 #site-wrapper {background: $bg-fondo; -pie-background: $bg-fondo-pie; @include css3pie; position: relative; z-index: 60}
 h1, h2, h3, h4, h5, h6 {line-height: 100%; @extend .font-comfortaa-3; margin: 0}
-.heading {@extend .font-big; color: $red}
+.heading {@extend .font-big; color: $red; padding-bottom: $separation}
+.title {@extend .title-1}
+p {@extend .paragraph-1}
+
+
 form {margin: 0}
 
 .main-menu {
   float: left; border-bottom: 10px solid $gold; 
-  ul {margin: 0; float: left;
+  ul {margin: 0; float: left; position: relative;
     li {
-      float: left; list-style: none; background: $bg-menu-bevel; padding-right: 2px; position: relative;
+      float: left; list-style: none; background: $bg-menu-bevel; padding-right: 2px; 
       a, span {
         background: $bg-menu; text-align: center; color: $blue;
         width: 160px; height: 41px; padding: 10px 0 0; float: left;
@@ -31,11 +35,22 @@ form {margin: 0}
       }
       @include submenu;
       &:hover {
-        .submenu {@include transition-1; @include display-true; top: 100%}
+        .submenu {@include transition-1; /*@include display-true; */top: 100%}
       }
     }
   }
 }
+
+.main-menu {
+  ul ul {@include display-false; }
+    li:hover > a + ul,
+    li:hover > span + ul {@include display-true}
+
+    li:hover > a + ul a,
+    li:hover > span + ul a {background: $gold}
+}
+
+
 .header-search {
   @include absolute(right, top, 0, 70px); background: $search-header; @include size(245px, 45px);
   form {
@@ -57,7 +72,7 @@ form {margin: 0}
 }
 
 .region-inner {
-  width: 870px; position: relative
+  width: 870px; position: relative; margin: 0 auto;
 }
 
 .info-company,
@@ -74,7 +89,6 @@ form {margin: 0}
   .address:before, .address .before {background-position: 0 -19px}
   .phone:before, .phone .before {background-position: 0 -38px}
   .email:before, .email .before {background-position: 0 -56px}
-
 }
 
 .info-web {float: right; text-align: right}
@@ -98,8 +112,23 @@ form {margin: 0}
 
 .carousel {
   float: left; margin: 0; border-bottom: 10px solid $gold;
+  .carousel-caption {
+    @extend .title; color: white; font-weight: 300; background: $filter-black;
+  }
+  .carousel-control {
+    top: 48%; background: $red; font-size: 55px; font-family: verdana; border: 0;
+  }
 }
+.content {width: 100%; float: left; clear: left; padding-top: $separation}
 
 #home {
-  .button.read-more {float: right; margin-top: 40px}
+  .button.read-more {float: right; margin-top: 50px}
+  .content {
+    background: $bg-border-top;
+    .info {width: 220px; float: left; margin-right: 55px;
+      &.info-marcas {
+        margin-right: 0
+      }
+    }
+  }
 }

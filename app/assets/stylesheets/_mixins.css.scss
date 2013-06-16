@@ -6,6 +6,7 @@
     width: -moz-calc(100% - 2px); width: -webkit-calc(100% - 2px); width: -o-calc(100% - 2px); width: calc(100% - 2px); 
     @include display-false; 
     @include absolute(left, top, 0, -100px);
+    //top: 100%;
     li {
       clear: left; width: 100%; padding: 0; background: none;
       a, span {width: 100%; color: white; text-transform: uppercase; @extend .font-pt-4}
@@ -19,6 +20,37 @@
         background: $filter-red;
       } 
     }
+
+    &.submenu.nivel-1 {
+      width: 100%; text-align: center; background: $gold;
+      li {
+        @include inline-block; width: auto; position: relative;
+        span {color: $red}
+        a, span {padding-left: 45px; padding-right: 45px; background: none}
+        @include submenu-nivel-2; 
+        // @include submenu_hover; 
+      }
+    }
+  }
+}
+
+
+
+@mixin submenu-nivel-2 {
+  ul {width: 180px; background: none;
+    li {position: relative; width: 100%;
+      a, span {text-align: left; padding-left: 12px; padding-right: 12px; background: $gold}
+      a {background: $gold;
+        &:hover {background: $red}
+      }
+        @include submenu-nivel-3; 
+
+    }
+  }
+}
+
+@mixin submenu-nivel-3 {
+  ul {width: 180px; top: auto; left: 100%; 
   }
 }
 
@@ -40,7 +72,7 @@
 
 .extension-del-content {
   width: 890px; position: relative; left: -10px; float: left; 
-  padding: 30px 45px 55px; @include box-sizing(border-box); background: $bg-content;
+  padding: 35px 45px 55px; @include box-sizing(border-box); background: $bg-content;
 }
 
 
@@ -61,8 +93,21 @@
 
 
 // font sizes
+.font-large {
+  font-size: $large; line-height: 140%;
+}
 .font-big {
   font-size: $big; line-height: 140%;
+}
+
+// headings
+.title-1 {
+  @extend .font-big; @extend .font-comfortaa-7; color: $red; padding-bottom: $separation-word;
+}
+
+// paragraphs
+.paragraph-1 {
+  color: $gray; font-family: $trebuchet; margin: 0;
 }
 
 

@@ -7,14 +7,21 @@ $bg-menu-bevel:       url(bg-menu-bevel.jpg) no-repeat 100% 0;
 $icons:               url(icons.png) no-repeat 0 0;
 $filter-gold:         url(filter-gold.png) repeat 0 0;
 $filter-red:          url(filter-red.png) repeat 0 0;
+$filter-black:        url(filter-black.png) repeat 0 0;
 $search-header:       url(bg-search.png) no-repeat 0 0;
-$bg-content:          url(bg-content.png) no-repeat 0px 85%;
+$bg-content:          url(bg-content.png) no-repeat 0px 100%;
 $bg-red:              url(bg-red.jpg) repeat-x 0px 100%;
+$bg-border-top:       url(bg-border.jpg) repeat-x 0px 0;
 
+
+// space
+$separation:          30px;
+$separation-word:     $separation/2;
 
 // fonts
 $comfortaa:           'Comfortaa', cursive;
 $pt:                  'PT Sans', sans-serif;
+$trebuchet:           'trebuchet ms';
 
 $small:               14px;
 $medium:              16px;
@@ -26,3 +33,4 @@ $huge:                24px;
 $red:                 #c32c01;
 $blue:                #40516f;
 $gold:                #ff8800;
+$gray:                #646363;

@@ -37,7 +37,7 @@
             %h2.slogan
               Contamos con la experiencia y tecnolog&iacute;a para lograr los mejores resultados
             = render 'layouts/search'
-          .header-components
+          .header-components.region-inner
             %nav.main-menu
               %h6.element-invisible
                 Main Navigation
@@ -46,7 +46,8 @@
 
       %section#content
         .container
-          = yield
+          .region-inner
+            = yield
 
       = render 'layouts/footer'
 
