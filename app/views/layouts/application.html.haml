@@ -46,10 +46,9 @@
 
       %section#content
         .container
-          .region-inner
-            = yield
+          = yield
 
-    = render 'layouts/footer'
+      = render 'layouts/footer'
 
     #container
       - flash.each do |name, msg|

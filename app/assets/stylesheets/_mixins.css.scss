@@ -38,6 +38,12 @@
 }
 
 
+.extension-del-content {
+  width: 890px; position: relative; left: -10px; float: left; 
+  padding: 30px 45px 55px; @include box-sizing(border-box); background: $bg-content;
+}
+
+
 // fonts
 .font-comfortaa-3,
 .font-confortaa-4,
@@ -52,6 +58,13 @@
 
 .font-pt-4 {font-weight: 400}
 .font-pt-7 {font-weight: 700}
+
+
+// font sizes
+.font-big {
+  font-size: $big; line-height: 140%;
+}
+
 
 
 .radius-top-left {

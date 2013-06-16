@@ -8,17 +8,19 @@ $icons:               url(icons.png) no-repeat 0 0;
 $filter-gold:         url(filter-gold.png) repeat 0 0;
 $filter-red:          url(filter-red.png) repeat 0 0;
 $search-header:       url(bg-search.png) no-repeat 0 0;
-$bg-content:          url(bg-content.png) no-repeat 0px 100%;
-
+$bg-content:          url(bg-content.png) no-repeat 0px 85%;
+$bg-red:              url(bg-red.jpg) repeat-x 0px 100%;
 
 
 // fonts
 $comfortaa:           'Comfortaa', cursive;
 $pt:                  'PT Sans', sans-serif;
 
-$small:               '14px';
-$medium:              '16px';
-$large:               '18px';
+$small:               14px;
+$medium:              16px;
+$large:               18px;
+$big:                 22px;
+$huge:                24px;
 
 // colors
 $red:                 #c32c01;
