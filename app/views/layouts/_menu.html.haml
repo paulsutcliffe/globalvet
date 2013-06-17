@@ -1,76 +1,49 @@
 %ul.submenu
   %li.first
-    = link_to_unless_current 'Inicio', '/' do
-      %span Inicio 
+    = link_to_unless_current 'Inicio', root_path do
+      %span Inicio
   %li
-    = link_to_unless_current '¿Quiénes Somos?', 'http://www.google.com' do
+    = link_to_unless_current '¿Quiénes Somos?', quienes_somos_path do
       %span ¿Quiénes Somos?
   %li
-    = link_to_unless_current 'Productos', 'http://www.google.com' do
+    = link_to_unless_current 'Productos', categorias_path do
       %span Productos
-    %ul.submenu.nivel-1
-      %li
-        = link_to_unless_current 'Aves', '/' do
-          %span Aves
-        %ul.submenu.nivel-2
+    - unless @categorias_tree.empty?
+      %ul.submenu.nivel-1
+        - @categorias_tree.each do |categoria_tree|
           %li
-            = link_to_unless_current 'Nutrición', 'http://www.google.com' do
-              %span Nutrición
-          %li
-            = link_to_unless_current 'Sanidad', 'http://www.google.com' do
-              %span Sanidad
-
-            %ul.submenu.nivel-3
-              %li
-                = link_to_unless_current 'Antibióticos', 'http://www.google.com' do
-                  %span Antibióticos
-                %ul.submenu.nivel-4
+            = link_to_unless_current categoria_tree.nombre, categoria_tree do
+              %span= categoria_tree.nombre
+            - unless @subcategorias_tree.empty?
+              %ul.submenu.nivel-2
+                - @subcategorias_tree.each do |subcategoria_tree|
                   %li
-                    = link_to_unless_current 'Inyectables', 'http://www.google.com' do
-                      %span Inyectables
-                  %li
-                    = link_to_unless_current 'Solubles', 'http://www.google.com' do
-                      %span Solubles
+                    = link_to_unless_current subcategoria_tree.nombre, categoria_subcategoria_path(categoria_tree, subcategoria_tree) do
+                      %span= subcategoria.tree.nombre
 
-                  %li
-                    = link_to_unless_current 'Premix', 'http://www.google.com' do
-                      %span Premix 
-                // end submenú nivel 4
+                    %ul.submenu.nivel-3
+                      %li
+                        = link_to_unless_current 'Antibióticos', 'http://www.google.com' do
+                          %span Antibióticos
+                        %ul.submenu.nivel-4
+                          %li
+                            = link_to_unless_current 'Inyectables', 'http://www.google.com' do
+                              %span Inyectables
+                          %li
+                            = link_to_unless_current 'Solubles', 'http://www.google.com' do
+                              %span Solubles
 
-              %li
-                = link_to_unless_current 'Antiparasitarios', 'http://www.google.com' do
-                  %span Antiparasitarios
-
-              %li
-                = link_to_unless_current 'Antiinflamatorios', 'http://www.google.com' do
-                  %span Antiinflamatorios 
-              %li
-                = link_to_unless_current 'Mucolíticos', 'http://www.google.com' do
-                  %span Mucolíticos 
-            // end submenú nivel 3
-
-      %li
-        = link_to_unless_current 'Porcinos', 'http://www.google.com' do
-          %span Porcinos
-      %li
-        = link_to_unless_current 'Bovinos', 'http://www.google.com' do
-          %span Bovinos
-      %li
-        = link_to_unless_current 'Equinos', '/' do
-          %span Equinos
-      %li
-        = link_to_unless_current 'Mascotas', 'http://www.google.com' do
-          %span Mascotas
-      %li
-        = link_to_unless_current 'Peces', 'http://www.google.com' do
-          %span Peces
+                          %li
+                            = link_to_unless_current 'Premix', 'http://www.google.com' do
+                              %span Premix
+                        // end submenú nivel 4
 
   %li
-    = link_to_unless_current 'Representados', 'http://www.google.com' do
+    = link_to_unless_current 'Representados', marcas_path do
       %span Representados
   %li
-    = link_to_unless_current 'Global News', 'http://www.google.com' do
+    = link_to_unless_current 'Global News', noticias_path do
       %span Global News
   %li.last
-    = link_to_unless_current 'Contacto', 'http://www.google.com' do
+    = link_to_unless_current 'Contacto', new_contacto_path do
       %span Contacto

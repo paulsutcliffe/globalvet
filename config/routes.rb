@@ -2,7 +2,7 @@ Globalvet::Application.routes.draw do
 
   devise_for :admins
 
-  get "quienes_somos/index"
+  match "quienes_somos" => "quienes_somos#index", via: :get
 
   resources :marcas
 

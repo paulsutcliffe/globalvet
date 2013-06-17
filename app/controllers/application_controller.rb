@@ -1,10 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  before_filter :load_products_tree
 
-  def load_metadata
-    @metadata = Metadatum.first
-    @first_product = Product.select("id, slug").first
+  def load_products_tree
+    @categorias_tree = Categoria.select("id, nombre, slug").all
+    @subcategorias_tree = Subcategoria.select("id, nombre, slug, categoria_id").all
+    @tipos_tree = Tipo.select("id, nombre, slug, subcategoria_id").all
   end
 
   def bodyid
