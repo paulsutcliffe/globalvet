@@ -1,21 +1,27 @@
-%h1 Listing marcas
 
-%table
-  %tr
-    %th Logo
-    %th Link
-    %th
-    %th
-    %th
+#page-content
+  %h1.page-title 
+    = page_title! 'Marcas Representadas'
 
-  - @marcas.each do |marca|
-    %tr
-      %td= marca.logo
-      %td= marca.link
-      %td= link_to 'Show', marca
-      %td= link_to 'Edit', edit_marca_path(marca)
-      %td= link_to 'Destroy', marca, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  - if current_admin
+    .admin.head
+      = link_to 'New Marca', new_marca_path, class: 'button-create'
 
-%br
+  .content.img-gallery
+    = link_to image_tag('img-representadas.jpg'), 'test'
+    = link_to image_tag('img-representadas-2.jpg'), 'test'
+    = link_to image_tag('img-representadas-3.jpg'), 'test'
+    = link_to image_tag('img-representadas-4.jpg'), 'test'
+    = link_to image_tag('img-representadas-5.jpg'), 'test'
+    = link_to image_tag('img-representadas-6.jpg'), 'test'
 
-= link_to 'New Marca', new_marca_path
+  -#
+    - @marcas.each do |marca|
+      tr
+        %td= marca.logo
+        %td= marca.link
+        %td= link_to 'Show', marca
+        %td= link_to 'Edit', edit_marca_path(marca)
+        %td= link_to 'Destroy', marca, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  
+  

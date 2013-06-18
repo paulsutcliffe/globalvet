@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6 {line-height: 100%; @extend .font-comfortaa-3; margin: 0}
 background: $page-title; @include size(870px, 90px); padding: 20px 0 0 40px; @include box-sizing(border-box);
 @extend .font-title; @extend .font-comfortaa-7; color: $red;
 }
-
+img {vertical-align: top}
 p {@extend .paragraph-1}
 
 
@@ -159,3 +159,14 @@ form {
   }
 }
 
+.img-gallery {
+  a {
+    @include inline-block; margin-right: 25px;
+    @include size(165px, 158px);
+    img {}
+  }
+}
+
+
+// buttons
+.button-create {@extend .btn; @extend .btn-default}
