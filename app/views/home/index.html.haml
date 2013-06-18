@@ -1,27 +1,11 @@
 - page_title! 'Globalvet | Contamos con la experiencia y tecnología para lograr los mejores resultados'
 
 
-#myCarousel.carousel.slide
-  %ol.carousel-indicators
-    %li{:"data-target" => "#myCarousel", :"data-slide-to" => "0", :class => "active"}
-    %li{:"data-target" => "#myCarousel", :"data-slide-to" => "1"}
 
-  <!-- Carousel items -->
-  .carousel-inner
-    .item.active
-      = image_tag 'img-slider.jpg'
-      .carousel-caption
-        Vacunas agropecuarias
-    .item
-      = image_tag 'img-slider-2.jpg'
-      .carousel-caption
-        Vacunas agropecuarias 2
-
-  <!-- Carousel nav -->
-  = link_to raw('&lsaquo;'), '#myCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
-  = link_to raw('&rsaquo;'), '#myCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
 
 #page-content
+  = render 'slider'
+
   = link_to image_tag('btn-read-more.png', alt: 'Leer más'), '/', class: 'button read-more'
   %h3.heading
     Globalvet S.A.C., es una empresa peruana dedicada

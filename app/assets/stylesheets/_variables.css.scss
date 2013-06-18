@@ -9,7 +9,7 @@ $filter-gold:         url(filter-gold.png) repeat 0 0;
 $filter-red:          url(filter-red.png) repeat 0 0;
 $filter-black:        url(filter-black.png) repeat 0 0;
 $search-header:       url(bg-search.png) no-repeat 0 0;
-$bg-content:          url(bg-content.png) no-repeat 0 100%;
+$bg-content:          white; //url(bg-content.png) no-repeat -10px 100%;
 $bg-red:              url(bg-red.jpg) repeat-x 0 100%;
 $bg-border-top:       url(bg-border.jpg) repeat-x 0 0;
 $page-title:          url(bg-page-title.jpg) repeat-x 0 0;
@@ -38,6 +38,9 @@ $red:                 #c32c01;
 $blue:                #40516f;
 $gold:                #ff8800;
 $gray:                #646363;
+$stroke:              1px solid #bbb8b8;
 
 // styling
 $radius:              10px;
+$shadow:              0 0 5px black;
+$text-shadow:         -1px 1px 1px black;

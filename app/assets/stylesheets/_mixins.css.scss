@@ -1,9 +1,13 @@
 
+.shadow-element {@include box-shadow($shadow)}
+.radius-bottom {@include border-bottom-left-radius($radius * 2); @include border-bottom-right-radius($radius * 2)}
 .rounded-element { @include border-radius($radius); overflow: hidden}
-.input-style {background: $bg-input;}
+.input-style {background: $bg-input; border: 0}
 .textarea-style {background: $bg-textarea; }
-.button-style {background: $button;}
-.form-element {@include size(230px, 31px); @extend .rounded-element; }
+.button-style {background: $button; border: 0; line-height: 100%; width: 120px; height: 31px; color: white; text-shadow: $text-shadow}
+.form-element {width: 230px; height: 31px; @extend .rounded-element; border: $stroke}
+
+.forzar-pegado {position: relative; left: -45px; top: -45px}
 
 @mixin submenu {
   .submenu {
@@ -76,7 +80,7 @@
 
 
 .extension-del-content {
-  width: 890px; position: relative; left: -10px; float: left; 
+  width: 870px; position: relative; left: 0px; float: left; 
   padding: 35px 45px 55px; @include box-sizing(border-box); background: $bg-content;
   .not-front & {
     padding-top: 110px

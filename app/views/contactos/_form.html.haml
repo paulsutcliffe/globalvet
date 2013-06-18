@@ -5,18 +5,21 @@
       %ul
         - @contacto.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :nombre
-    = f.text_field :nombre
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :telefono
-    = f.text_field :telefono
-  .field
-    = f.label :mensaje
-    = f.text_area :mensaje
-  .actions
-    = f.submit 'Save'
+  %fieldset
+    %legend
+      Envíanos un mensaje
+    .field
+      = f.text_field :nombre
+      = f.label :nombre, 'Nombre / Empresa *'
+    .field
+      = f.text_field :email
+      = f.label :email, 'E-mail *'
+    .field
+      = f.text_field :telefono
+      = f.label :telefono, 'Teléfono'
+    .field
+      = f.label :mensaje, 'Mensaje *'
+      %br
+      = f.text_area :mensaje
+    .actions
+      = f.submit 'Enviar'

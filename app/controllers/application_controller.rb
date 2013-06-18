@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def bodyclass
     @action = params[:action].parameterize
 
-    if params[:controller] == 'products' && params[:action] == 'index'
+    if params[:controller] == 'home' && params[:action] == 'index'
       @front = 'front'
     else
       @front = 'not-front'
