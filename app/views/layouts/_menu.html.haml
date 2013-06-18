@@ -10,33 +10,36 @@
       %span Productos
     - unless @categorias_tree.empty?
       %ul.submenu.nivel-1
-        - @categorias_tree.each do |categoria_tree|
+        - @categorias_tree.select do |categoria_tree|
           %li
             = link_to_unless_current categoria_tree.nombre, categoria_tree do
               %span= categoria_tree.nombre
             - unless @subcategorias_tree.empty?
               %ul.submenu.nivel-2
-                - @subcategorias_tree.each do |subcategoria_tree|
+                - @subcategorias_tree.select { |sub| sub.categoria_id == categoria_tree.id }.each do |subcategoria_tree|
                   %li
                     = link_to_unless_current subcategoria_tree.nombre, categoria_subcategoria_path(categoria_tree, subcategoria_tree) do
                       %span= subcategoria.tree.nombre
 
-                    %ul.submenu.nivel-3
-                      %li
-                        = link_to_unless_current 'Antibióticos', 'http://www.google.com' do
-                          %span Antibióticos
-                        %ul.submenu.nivel-4
+                    - unless @tipos_tree.empty?
+                      %ul.submenu.nivel-3
+                        - @tipos_tree.select { |tipo| tipo.subcategoria_id == subcategoria_tree.id }.each do |tipo_tree|
                           %li
-                            = link_to_unless_current 'Inyectables', 'http://www.google.com' do
-                              %span Inyectables
-                          %li
-                            = link_to_unless_current 'Solubles', 'http://www.google.com' do
-                              %span Solubles
+                            = link_to_unless_current tipo_tree.nombre, categoria_subcategoria_tipo_path(categoria_tree, subcategoria_tree, tipo_tree) do
+                              %span= tipo_tree.nombre
 
-                          %li
-                            = link_to_unless_current 'Premix', 'http://www.google.com' do
-                              %span Premix
-                        // end submenú nivel 4
+                            %ul.submenu.nivel-4
+                              %li
+                                = link_to_unless_current 'Inyectables', 'http://www.google.com' do
+                                  %span Inyectables
+                              %li
+                                = link_to_unless_current 'Solubles', 'http://www.google.com' do
+                                  %span Solubles
+
+                              %li
+                                = link_to_unless_current 'Premix', 'http://www.google.com' do
+                                  %span Premix
+                            // end submenú nivel 4
 
   %li
     = link_to_unless_current 'Representados', marcas_path do
