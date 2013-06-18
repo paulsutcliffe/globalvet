@@ -1,4 +1,9 @@
 
+.rounded-element { @include border-radius($radius); overflow: hidden}
+.input-style {background: $bg-input;}
+.textarea-style {background: $bg-textarea; }
+.button-style {background: $button;}
+.form-element {@include size(230px, 31px); @extend .rounded-element; }
 
 @mixin submenu {
   .submenu {
@@ -73,6 +78,9 @@
 .extension-del-content {
   width: 890px; position: relative; left: -10px; float: left; 
   padding: 35px 45px 55px; @include box-sizing(border-box); background: $bg-content;
+  .not-front & {
+    padding-top: 110px
+  }
 }
 
 
@@ -99,6 +107,14 @@
 .font-big {
   font-size: $big; line-height: 140%;
 }
+.font-huge {
+  font-size: $huge; line-height: 140%;
+}
+.font-title {
+  font-size: $huge+10; line-height: 140%;
+}
+
+
 
 // headings
 .title-1 {
@@ -113,11 +129,11 @@
 
 
 .radius-top-left {
-  @include border-top-left-radius(10px);
+  @include border-top-left-radius($radius);
   overflow: hidden;
 }
 .radius-top-right {
-  @include border-top-right-radius(10px);
+  @include border-top-right-radius($radius);
   overflow: hidden;
 }
 

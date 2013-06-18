@@ -9,9 +9,13 @@ $filter-gold:         url(filter-gold.png) repeat 0 0;
 $filter-red:          url(filter-red.png) repeat 0 0;
 $filter-black:        url(filter-black.png) repeat 0 0;
 $search-header:       url(bg-search.png) no-repeat 0 0;
-$bg-content:          url(bg-content.png) no-repeat 0px 100%;
-$bg-red:              url(bg-red.jpg) repeat-x 0px 100%;
-$bg-border-top:       url(bg-border.jpg) repeat-x 0px 0;
+$bg-content:          url(bg-content.png) no-repeat 0 100%;
+$bg-red:              url(bg-red.jpg) repeat-x 0 100%;
+$bg-border-top:       url(bg-border.jpg) repeat-x 0 0;
+$page-title:          url(bg-page-title.jpg) repeat-x 0 0;
+$bg-input:            url(input.jpg) repeat-x 0 0;
+$bg-textarea:         url(textarea.jpg) repeat-x 0 0;
+$button:              url(btn-default.jpg) repeat-x 0 0;
 
 
 // space
@@ -34,3 +38,6 @@ $red:                 #c32c01;
 $blue:                #40516f;
 $gold:                #ff8800;
 $gray:                #646363;
+
+// styling
+$radius:              10px;
