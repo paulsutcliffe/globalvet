@@ -1,7 +1,7 @@
 body {font-family: $comfortaa; background: $red; overflow-y: scroll}
 #site-wrapper {background: $bg-fondo; -pie-background: $bg-fondo-pie; @include css3pie; position: relative; z-index: 60}
 h1, h2, h3, h4, h5, h6 {line-height: 100%; @extend .font-comfortaa-3; margin: 0}
-.heading {@extend .font-big; color: $red; padding-bottom: $separation}
+.heading {@extend .font-large-x; color: $red; padding-bottom: $separation}
 .title {@extend .title-1}
 .page-title {@include absolute(left, top, 0px, 0);
 background: $page-title; @include size(870px, 90px); padding: 20px 0 0 40px; @include box-sizing(border-box);
@@ -141,6 +141,15 @@ form {margin: 0}
   }
 }
 
+#quienes_somos {
+  .info {
+    &.mision-vision {
+
+    }
+  }
+}
+
+
 form {
   legend {color: $gray; text-transform: uppercase; border-bottom: 0; font-size: $medium; margin: 0; padding-bottom: $separation}
   input[type="text"], textarea, submit, button {@extend .form-element }
@@ -166,6 +175,8 @@ form {
     img {}
   }
 }
+
+.bg-full-image {width: 897px; max-width: 897px; position: relative; top: -20px; left: -59px}
 
 
 // buttons

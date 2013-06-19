@@ -8,12 +8,8 @@
       = link_to 'New Marca', new_marca_path, class: 'button-create'
 
   .content.img-gallery
-    = link_to image_tag('img-representadas.jpg'), 'test'
-    = link_to image_tag('img-representadas-2.jpg'), 'test'
-    = link_to image_tag('img-representadas-3.jpg'), 'test'
-    = link_to image_tag('img-representadas-4.jpg'), 'test'
-    = link_to image_tag('img-representadas-5.jpg'), 'test'
-    = link_to image_tag('img-representadas-6.jpg'), 'test'
+    - @marcas.each do |marca|
+      = link_to image_tag(marca.logo_url(:medium), alt: marca.link), marca.link, class: cycle('col-1', 'col-2', 'col-3', 'col-4')
 
   -#
     - @marcas.each do |marca|

@@ -1,19 +1,22 @@
 #myCarousel.carousel.slide
   %ol.carousel-indicators
-    %li{:"data-target" => "#myCarousel", :"data-slide-to" => "0", :class => "active"}
-    %li{:"data-target" => "#myCarousel", :"data-slide-to" => "1"}
+    - @diapositivas.each_with_index do |slide, index|
+      %li{:"data-target" => "#myCarousel", :"data-slide-to" => index}
 
   <!-- Carousel items -->
   .carousel-inner
-    .item.active
-      = image_tag 'img-slider.jpg'
-      .carousel-caption
-        Vacunas agropecuarias
-    .item
-      = image_tag 'img-slider-2.jpg'
-      .carousel-caption
-        Vacunas agropecuarias 2
+    - @diapositivas.each do |slide|
+      .item
+        = image_tag slide.slide_url(:regular)
+        .carousel-caption
+          = link_to slide.titulo, slide.link
 
   <!-- Carousel nav -->
   = link_to raw('&lsaquo;'), '#myCarousel', :"data-slide" => 'prev', :class => 'carousel-control left'
   = link_to raw('&rsaquo;'), '#myCarousel', :"data-slide" => 'next', :class => 'carousel-control right'
+
+:javascript
+  $(document).ready(function() {
+    $('.carousel-inner .item:eq(0), .carousel-indicators li:eq(0)').addClass('active');
+  
+  });
