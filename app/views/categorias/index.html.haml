@@ -12,7 +12,7 @@
     %tr
       %td= categoria.nombre
       %td= categoria.imagen
-      %td= link_to 'Show', reino_categoria_path(categoria.reino, categoria)
+      %td= link_to 'Show', reino_categoria_subcategorias_path(categoria.reino, categoria)
       %td= link_to 'Edit', edit_reino_categoria_path(categoria.reino, categoria)
       %td= link_to 'Destroy', reino_categoria_path(categoria.reino, categoria), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
