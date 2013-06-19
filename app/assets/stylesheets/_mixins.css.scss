@@ -133,6 +133,12 @@
   color: $gray; font-family: $trebuchet; margin: 0;
 }
 
+.arrow-title {
+  color: white; 
+  padding: 5px 0 0 10px;
+  @include box-sizing(border-box);
+  background: $bg-arrow;
+}
 
 
 .radius-top-left {

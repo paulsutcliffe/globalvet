@@ -144,7 +144,7 @@ form {margin: 0}
 #quienes_somos {
   .info {
     &.mision-vision {
-
+      @extend .arrow-title; 
     }
   }
 }
