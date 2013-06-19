@@ -12,10 +12,11 @@
     %tr
       %td= tipo.nombre
       %td= tipo.imagen
-      %td= link_to 'Show', tipo
-      %td= link_to 'Edit', edit_tipo_path(tipo)
-      %td= link_to 'Destroy', tipo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Show', reino_categoria_subcategoria_tipo_producto_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo)
+      %td= link_to 'Edit', edit_reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo)
+      %td= link_to 'Destroy', reino_categoria_subcategoria_tipo_producto_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo)
+, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Tipo', new_tipo_path
+= link_to 'New Tipo', new_reino_categoria_subcategoria_tipo_path(@subcategoria.categoria.reino, @subcategoria.categoria, @subcategoria)

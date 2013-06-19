@@ -8,10 +8,6 @@ DatabaseCleaner.clean
 
 FactoryGirl.create :admin
 
-6.times do
-  FactoryGirl.create :contacto
-end
-
 12.times do
   FactoryGirl.create :marca
 end
@@ -20,22 +16,14 @@ end
   FactoryGirl.create :noticia
 end
 
-6.times do
+3.times do
   FactoryGirl.create :producto
-end
-
-6.times do
-  FactoryGirl.create :subcategoria
-end
-
-6.times do
-  FactoryGirl.create :tipo
-end
-
-6.times do
-  FactoryGirl.create :categoria
 end
 
 3.times do
   FactoryGirl.create :diapositiva
+end
+
+16.times do
+  FactoryGirl.create :contacto
 end

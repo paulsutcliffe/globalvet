@@ -1,0 +1,21 @@
+%h1 Listing reinos
+
+%table
+  %tr
+    %th Nombre
+    %th Imagen
+    %th
+    %th
+    %th
+
+  - @reinos.each do |reino|
+    %tr
+      %td= reino.nombre
+      %td= reino.imagen
+      %td= link_to 'Show', reino
+      %td= link_to 'Edit', edit_reino_path(reino)
+      %td= link_to 'Destroy', reino, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Reino', new_reino_path

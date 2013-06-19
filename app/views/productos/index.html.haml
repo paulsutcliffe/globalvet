@@ -14,10 +14,10 @@
       %td= producto.nombre
       %td= producto.descripcion
       %td= producto.archivo_pdf
-      %td= link_to 'Show', producto
-      %td= link_to 'Edit', edit_producto_path(producto)
-      %td= link_to 'Destroy', producto, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Show', reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
+      %td= link_to 'Edit', edit_reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
+      %td= link_to 'Destroy', reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Producto', new_producto_path
+= link_to 'New Producto', new_reino_categoria_subcategoria_tipo_producto_path(@tipo.subcategoria.categoria.reino, @tipo.subcategoria.categoria, @tipo.subcategoria, @tipo)

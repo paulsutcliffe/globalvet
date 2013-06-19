@@ -12,10 +12,10 @@
     %tr
       %td= subcategoria.nombre
       %td= subcategoria.imagen
-      %td= link_to 'Show', subcategoria
-      %td= link_to 'Edit', edit_subcategoria_path(subcategoria)
-      %td= link_to 'Destroy', subcategoria, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Show', reino_categoria_subcategoria_path(subcategoria.categoria.reino, subcategoria.categoria, subcategoria)
+      %td= link_to 'Edit', edit_reino_categoria_subcategoria_path(subcategoria.categoria.reino, subcategoria.categoria, subcategoria)
+      %td= link_to 'Destroy', reino_categoria_subcategoria_path(subcategoria.categoria.reino, subcategoria.categoria, subcategoria), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Subcategoria', new_subcategoria_path
+= link_to 'New Subcategoria', new_reino_categoria_subcategoria_path(@categoria.reino, @categoria)

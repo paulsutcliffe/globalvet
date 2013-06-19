@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @reino.nombre
+%p
+  %b Imagen:
+  = @reino.imagen
+
+= link_to 'Edit', edit_reino_path(@reino)
+\|
+= link_to 'Back', reinos_path

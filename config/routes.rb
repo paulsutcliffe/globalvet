@@ -6,11 +6,12 @@ Globalvet::Application.routes.draw do
 
   resources :marcas
 
-  resources :categorias do
-    resources :subcategorias do
-      resources :productos
-      resources :tipos do
-        resources :productos
+  resources :reinos do
+    resources :categorias do
+      resources :subcategorias do
+        resources :tipos do
+          resources :productos
+        end
       end
     end
   end

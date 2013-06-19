@@ -1,11 +1,9 @@
-class Subcategoria < ActiveRecord::Base
+class Reino < ActiveRecord::Base
   attr_accessible :imagen, :nombre, :slug
   extend FriendlyId
   friendly_id :nombre, use: :slugged
 
-  has_many :tipos
-  has_many :productos
-  belongs_to :categoria
+  has_many :categorias
 
   mount_uploader :imagen, ImagenUploader
 end

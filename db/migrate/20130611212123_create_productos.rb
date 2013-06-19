@@ -5,10 +5,11 @@ class CreateProductos < ActiveRecord::Migration
       t.text :descripcion
       t.string :archivo_pdf
       t.string :imagen
+      t.string :slug
       t.integer :tipo_id
-      t.integer :subcategoria_id
 
       t.timestamps
     end
+    add_index :productos, :slug, unique: true
   end
 end

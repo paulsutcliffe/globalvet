@@ -6,40 +6,43 @@
     = link_to_unless_current '¿Quiénes Somos?', quienes_somos_path do
       %span ¿Quiénes Somos?
   %li
-    = link_to_unless_current 'Productos', categorias_path do
+    = link_to_unless_current 'Productos', reinos_path do
       %span Productos
-    - unless @categorias_tree.empty?
+    - unless @reinos_tree.empty?
       %ul.submenu.nivel-1
-        - @categorias_tree.select do |categoria_tree|
+        - @reinos_tree.select do |reino_tree|
           %li
-            = link_to_unless_current categoria_tree.nombre, categoria_tree do
-              %span= categoria_tree.nombre
-            - unless @subcategorias_tree.empty?
+            = link_to_unless_current reino_tree.nombre, reino_categorias_path(reino_tree) do
+              %span= reino_tree.nombre
+
+            // end submenu nivel 1
+
+            - unless @categorias_tree.empty?
               %ul.submenu.nivel-2
-                - @subcategorias_tree.select { |sub| sub.categoria_id == categoria_tree.id }.each do |subcategoria_tree|
+                - @categorias_tree.select { |cat| cat.reino_id == reino_tree.id }.each do |categoria_tree|
                   %li
-                    = link_to_unless_current subcategoria_tree.nombre, categoria_subcategoria_path(categoria_tree, subcategoria_tree) do
-                      %span= subcategoria.tree.nombre
+                    = link_to_unless_current categoria_tree.nombre, reino_categoria_subcategorias_path(reino_tree, categoria_tree) do
+                      %span= categoria_tree.nombre
 
-                    - unless @tipos_tree.empty?
+                    // end submenu nivel 2
+
+                    - unless @subcategorias_tree.empty?
                       %ul.submenu.nivel-3
-                        - @tipos_tree.select { |tipo| tipo.subcategoria_id == subcategoria_tree.id }.each do |tipo_tree|
+                        - @subcategorias_tree.select { |sub| sub.categoria_id == categoria_tree.id }.each do |subcategoria_tree|
                           %li
-                            = link_to_unless_current tipo_tree.nombre, categoria_subcategoria_tipo_path(categoria_tree, subcategoria_tree, tipo_tree) do
-                              %span= tipo_tree.nombre
+                            = link_to_unless_current subcategoria_tree.nombre, reino_categoria_subcategoria_tipos_path(reino_tree, categoria_tree, subcategoria_tree) do
+                              %span= subcategoria_tree.nombre
 
-                            %ul.submenu.nivel-4
-                              %li
-                                = link_to_unless_current 'Inyectables', 'http://www.google.com' do
-                                  %span Inyectables
-                              %li
-                                = link_to_unless_current 'Solubles', 'http://www.google.com' do
-                                  %span Solubles
+                            // end submenu nivel 3
 
-                              %li
-                                = link_to_unless_current 'Premix', 'http://www.google.com' do
-                                  %span Premix
-                            // end submenú nivel 4
+                            - unless @tipos_tree.empty?
+                              %ul.submenu.nivel-4
+                                - @tipos_tree.select { |tipo| tipo.subcategoria_id == subcategoria_tree.id }.each do |tipo_tree|
+                                  %li
+                                    = link_to_unless_current tipo_tree.nombre, reino_categoria_subcategoria_tipo_productos_path(reino_tree, categoria_tree, subcategoria_tree, tipo_tree) do
+                                      %span= tipo_tree.nombre
+
+                                    // end submenu nivel 4
 
   %li
     = link_to_unless_current 'Representados', marcas_path do
