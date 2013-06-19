@@ -1,4 +1,4 @@
-= form_for @producto do |f|
+= form_for @producto, :html => { multipart: true } do |f|
   - if @producto.errors.any?
     #error_explanation
       %h2= "#{pluralize(@producto.errors.count, "error")} prohibited this producto from being saved:"
@@ -14,6 +14,6 @@
     = f.text_area :descripcion
   .field
     = f.label :archivo_pdf
-    = f.text_field :archivo_pdf
+    = f.file_field :archivo_pdf
   .actions
     = f.submit 'Save'

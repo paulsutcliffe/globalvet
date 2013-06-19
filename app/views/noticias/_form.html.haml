@@ -1,4 +1,4 @@
-= form_for @noticia do |f|
+= form_for @noticia, :html => { multipart: true } do |f|
   - if @noticia.errors.any?
     #error_explanation
       %h2= "#{pluralize(@noticia.errors.count, "error")} prohibited this noticia from being saved:"
@@ -14,6 +14,6 @@
     = f.text_area :contenido
   .field
     = f.label :imagen
-    = f.text_field :imagen
+    = f.file_field :imagen
   .actions
     = f.submit 'Save'
