@@ -10,6 +10,6 @@
   %b Archivo pdf:
   = @producto.archivo_pdf
 
-= link_to 'Edit', edit_producto_path(@producto)
+= link_to 'Edit', edit_reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto)
 \|
-= link_to 'Back', productos_path
+= link_to 'Back', reino_categoria_subcategoria_tipo_productos_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo)
