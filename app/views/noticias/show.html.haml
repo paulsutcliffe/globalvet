@@ -1,3 +1,15 @@
+
+#page-content
+  %h1.page-title 
+    = page_title! 'Noticias'
+
+  - if current_admin
+    .admin.head
+      = link_to 'New Noticia', new_noticia_path, class: 'button-create'
+
+  .content
+
+
 %p#notice= notice
 
 %p
