@@ -14,11 +14,12 @@
         .textual-content
           %h3.title= noticia.titulo
           = paragraph_truncate(noticia.contenido, 200)
+          - if current_admin
+            .admin-iterate
+              = link_to 'Edit', edit_noticia_path(noticia)
+              = link_to 'Destroy', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-          = link_to 'Show', noticia, class: 'button button-readmore'
-          .admin-iterate
-            = link_to 'Edit', edit_noticia_path(noticia)
-            = link_to 'Destroy', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        = link_to 'Leer más', noticia, class: 'button button-readmore'
 
 
 

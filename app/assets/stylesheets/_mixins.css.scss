@@ -150,6 +150,10 @@
   overflow: hidden;
 }
 
+.boton-rojo {
+@extend .rounded-element; @extend .button-style;
+padding: 8px 0 0 0; height: 25px;
+}
 
 
 
