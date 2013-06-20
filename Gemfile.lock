@@ -132,6 +132,8 @@ GEM
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-protection (1.5.0)
+      rack
     rack-ssl (1.3.3)
       rack
     rack-test (0.6.2)
@@ -144,6 +146,8 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails-asset-jqueryui (0.0.3)
+      jquery-rails
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -155,6 +159,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    redis (3.0.4)
     responders (0.9.3)
       railties (~> 3.1)
     rspec-core (2.13.1)
@@ -181,6 +186,15 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    soulmate (1.0.0)
+      multi_json (>= 1.0)
+      redis (>= 2.0)
+      sinatra (>= 1.0)
+      vegas (>= 0.1.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -200,6 +214,8 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    vegas (0.1.11)
+      rack (>= 1.0.0)
     warden (1.2.1)
       rack (>= 1.0)
     websocket (1.0.7)
@@ -232,9 +248,11 @@ DEPENDENCIES
   nifty-generators
   page_title_helper
   rails (= 3.2.13)
+  rails-asset-jqueryui
   rspec-rails (~> 2.13.0)
   rvm-capistrano
   sass-rails (~> 3.2.3)
+  soulmate
   uglifier (>= 1.0.3)
   unicorn
   will_paginate

@@ -1,4 +1,11 @@
 .header-search
   %form
-    %input{:type=>'text'}
+    %input{:id=>'nombre_de_producto', :type=>'text'}
     %input{:type=>'submit', :value=>''}
+
+:javascript
+  $(function() {
+    $("#nombre_de_producto" ).autocomplete({
+      source: "<%= productos_autocomplete_nombre_de_producto_path %>"
+    });
+  })

@@ -4,6 +4,8 @@ Globalvet::Application.routes.draw do
 
   match "quienes_somos" => "quienes_somos#index", via: :get
 
+  get "productos/autocomplete_nombre_de_producto"
+
   resources :marcas, :except => :show
 
   resources :reinos do
