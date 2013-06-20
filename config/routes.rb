@@ -4,7 +4,7 @@ Globalvet::Application.routes.draw do
 
   match "quienes_somos" => "quienes_somos#index", via: :get
 
-  resources :marcas
+  resources :marcas, :except => :show
 
   resources :reinos do
     resources :categorias do
@@ -18,7 +18,7 @@ Globalvet::Application.routes.draw do
 
   resources :noticias
 
-  resources :diapositivas
+  resources :diapositivas, :except => :show
 
   resources :contactos
 
