@@ -127,7 +127,7 @@ form {margin: 0}
     top: 48%; background: $red; font-size: 55px; font-family: verdana; border: 0;
   }
 }
-.content {width: 100%; float: left; clear: left; padding-top: $separation}
+.content {width: 100%; float: left; clear: left; padding-top: $separation; background: $bg-border-top;}
 
 #home {
   .button.read-more {float: right; margin-top: 50px}
@@ -144,7 +144,13 @@ form {margin: 0}
 #quienes_somos {
   .info {
     &.mision-vision {
-      @extend .arrow-title; 
+      float: left; width: 50%;
+      h3 {
+        @extend .arrow-title; 
+      }
+      p {
+        padding-right: 50px
+      }
     }
   }
 }
