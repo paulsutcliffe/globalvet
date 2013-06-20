@@ -1,7 +1,7 @@
-%h1 Editing marca
+%h1 Editando marca
+
+= image_tag @marca.logo_url(:medium) if @marca.logo?
 
 = render 'form'
 
-= link_to 'Show', @marca
-\|
-= link_to 'Back', marcas_path
+= link_to 'Regresar', marcas_path
