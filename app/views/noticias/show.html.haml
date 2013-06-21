@@ -6,22 +6,14 @@
   - if current_admin
     .admin.head
       = link_to 'New Noticia', new_noticia_path, class: 'button-create'
+      = link_to 'Edit', edit_noticia_path(@noticia)
+  %h3.heading
+    = @noticia.titulo
+  .content.presentacion
+    = image_tag(@noticia.imagen_url(:default_noticia))
+    .textual-content
+      = paragraph(@noticia.contenido)
+      = @noticia.imagen
 
-  .content
 
-
-%p#notice= notice
-
-%p
-  %b Titulo:
-  = @noticia.titulo
-%p
-  %b Contenido:
-  = @noticia.contenido
-%p
-  %b Imagen:
-  = @noticia.imagen
-
-= link_to 'Edit', edit_noticia_path(@noticia)
-\|
-= link_to 'Back', noticias_path
+  = link_to 'Back', noticias_path, class: 'button-back'

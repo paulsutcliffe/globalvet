@@ -51,7 +51,9 @@ class ImagenUploader < CarrierWave::Uploader::Base
   version :thumb_noticia do
     process :resize_to_fill => [70, 70]
   end
-
+  version :default_noticia do
+    process :resize_to_fill => [180, 180]
+  end
  
 
   # Add a white list of extensions which are allowed to be uploaded.

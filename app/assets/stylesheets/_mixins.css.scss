@@ -4,10 +4,15 @@
 .rounded-element { @include border-radius($radius); overflow: hidden}
 .input-style {background: $bg-input; border: 0}
 .textarea-style {background: $bg-textarea; }
-.button-style {background: $button; border: 0; line-height: 100%; width: 120px; height: 31px; color: white; text-shadow: $text-shadow}
+.button-style,
+.button-style:hover {background: $button; border: 0; line-height: 100%; width: 120px; 
+ height: 31px; color: white; text-shadow: $text-shadow}
 .form-element {width: 230px; height: 31px; @extend .rounded-element; border: $stroke}
 
 .forzar-pegado {position: relative; left: -45px; top: -45px}
+
+.border-black {border: 1px solid black}
+
 
 @mixin submenu {
   .submenu {
@@ -150,7 +155,8 @@
   overflow: hidden;
 }
 
-.boton-rojo {
+.boton-rojo,
+.boton-rojo:hover {
 @extend .rounded-element; @extend .button-style;
 padding: 8px 0 0 0; height: 25px;
 }

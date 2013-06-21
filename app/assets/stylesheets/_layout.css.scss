@@ -156,7 +156,12 @@ form {margin: 0}
 }
 
 #noticias {
-  .content {background: none; padding-top: 0}
+  &.index {
+    .content {background: none; padding-top: 0}
+  }
+  &.show {
+    .button-back {float: right}
+  }
 }
 
 .resumen {
@@ -171,6 +176,12 @@ form {margin: 0}
   &:last-child {padding-bottom: 0; background: none}
   .button-readmore {@include absolute(bottom, right, 20px, 0); width: 100px}
 }
+
+.presentacion {
+  img {float: left; margin-right: 10px; @extend .border-black }
+  .textual-content {overflow: hidden}
+}
+
 
 
 
@@ -206,3 +217,5 @@ form {
 // buttons
 .button-create {@extend .btn; @extend .btn-default}
 .button-readmore {@extend .btn; @extend .btn-default; @extend .boton-rojo}
+.button-back {@extend .btn; @extend .btn-default; @extend .boton-rojo}
+
