@@ -2,10 +2,8 @@ class Contacto < ActiveRecord::Base
   attr_accessible :email, :mensaje, :nombre, :telefono
 
   EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
-  PHONE_REGEX = /^\(?([0-9]{2,4})\)?[-. ]?([0-9]{3,4})[-. ]?([0-9]{0,4})$/
 
-  validates :nombre, :presence => true, :length => { :maximum => 50 }
-  validates :telefono, :presence => true, :length => { :maximum => 16 }, :format => PHONE_REGEX
+  validates :nombre, :presence => true
   validates :email, :presence => true, :length => { :maximum => 100 }, :format => EMAIL_REGEX
-  validates :mensaje, :presence => true, :length => { :maximum => 1000 }
+  validates :mensaje, :presence => true
 end
