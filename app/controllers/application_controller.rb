@@ -23,13 +23,19 @@ class ApplicationController < ActionController::Base
       @front = 'not-front'
     end
 
+    if params[:controller] == 'reinos' || params[:controller] == 'categorias' || params[:controller] == 'subcategorias' || params[:controller]  == 'tipos' || params[:controller] == 'productos'
+      @product = 'product-page'
+    else
+      @product = ''
+    end
+
  #   if current_admin
  #     @admin = 'logged-in'
  #   else
  #     @admin = 'not-logged-in'
  #   end
 
-    @bodyclass = @action + ' ' + @front #+ ' ' + @admin
+    @bodyclass = @action + ' ' + @front + ' ' + @product #+ ' ' + @admin
   end
 
   helper_method :bodyid

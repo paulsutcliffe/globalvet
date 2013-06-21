@@ -1,6 +1,29 @@
-%h1 Listing productos
+#page-content
+  
+  %h3.heading
+    = page_title! 'Reinos'
 
-%table
+  - if current_admin
+    .admin.head
+      = link_to 'New Producto', new_reino_categoria_subcategoria_tipo_producto_path(@tipo.subcategoria.categoria.reino, @tipo.subcategoria.categoria, @tipo.subcategoria, @tipo)
+
+  .content.presentacion
+    - @productos.each do |producto|
+
+      .textual-content
+        %h3.heading
+          = link_to producto.nombre, reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
+
+        = paragraph(producto.descripcion)
+        = link_to producto.archivo_pdf #, class: 'button-pdf'
+        - if current_admin
+          .admin-iterate 
+            = link_to 'Edit', edit_reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
+            = link_to 'Destroy', reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+
+%table{style: 'display: none'}
   %tr
     %th Nombre
     %th Descripcion
@@ -18,6 +41,5 @@
       %td= link_to 'Edit', edit_reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
       %td= link_to 'Destroy', reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Producto', new_reino_categoria_subcategoria_tipo_producto_path(@tipo.subcategoria.categoria.reino, @tipo.subcategoria.categoria, @tipo.subcategoria, @tipo)
+= #link_to 'New Producto', new_reino_categoria_subcategoria_tipo_producto_path(@tipo.subcategoria.categoria.reino, @tipo.subcategoria.categoria, @tipo.subcategoria, @tipo)

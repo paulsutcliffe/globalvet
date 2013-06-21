@@ -16,7 +16,7 @@ end
   FactoryGirl.create :noticia
 end
 
-100.times do
+6.times do
   FactoryGirl.create :producto
 end
 

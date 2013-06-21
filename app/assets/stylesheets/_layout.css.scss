@@ -1,7 +1,8 @@
 body {font-family: $comfortaa; background: $red; overflow-y: scroll}
 #site-wrapper {background: $bg-fondo; -pie-background: $bg-fondo-pie; @include css3pie; position: relative; z-index: 60}
 h1, h2, h3, h4, h5, h6 {line-height: 100%; @extend .font-comfortaa-3; margin: 0}
-.heading {@extend .font-large-x; color: $red; padding-bottom: $separation}
+.heading {@extend .font-large-x; color: $red; padding-bottom: $separation;
+  a {color: $red}}
 .title {@extend .title-1}
 .page-title {@include absolute(left, top, 0px, 0);
 background: $page-title; @include size(870px, 90px); padding: 20px 0 0 40px; @include box-sizing(border-box);
@@ -115,8 +116,12 @@ form {margin: 0}
    @extend .extension-del-content; 
    @extend .shadow-element;
    @extend .radius-bottom;
+   .product-page & {
+      padding-top: 30px;
+    }
   }
 }
+
 
 .carousel {
   float: left; margin: 0; border-bottom: 10px solid $gold; @extend .forzar-pegado;
@@ -180,6 +185,10 @@ form {margin: 0}
 .presentacion {
   img {float: left; margin-right: 10px; @extend .border-black }
   .textual-content {overflow: hidden}
+
+  .product-page & {
+    img {margin-right: 50px}
+  }
 }
 
 
@@ -218,4 +227,5 @@ form {
 .button-create {@extend .btn; @extend .btn-default}
 .button-readmore {@extend .btn; @extend .btn-default; @extend .boton-rojo}
 .button-back {@extend .btn; @extend .btn-default; @extend .boton-rojo}
+.button-pdf {background: $pdf-icon; @include size(38px, 37px); display: block; text-indent: -9999px}
 

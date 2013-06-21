@@ -1,6 +1,29 @@
-%h1 Listing tipos
+#page-content
+  
+  %h3.heading
+    = page_title! 'Reinos'
 
-%table
+  - if current_admin
+    .admin.head
+      = link_to 'New Tipo', new_reino_categoria_subcategoria_tipo_path(@subcategoria.categoria.reino, @subcategoria.categoria, @subcategoria), class: 'button-create'
+
+
+  .content.presentacion
+    - @tipos.each do |tipo|
+      = link_to image_tag(tipo.imagen), reino_categoria_subcategoria_tipo_productos_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo)
+  
+      .textual-content
+        %h3.heading
+          = link_to tipo.nombre, reino_categoria_subcategoria_tipo_productos_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo)
+
+        - if current_admin
+          .admin-iterate 
+            = link_to 'Edit', edit_reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo)
+            = link_to 'Destroy', reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+
+%table{style: 'display: none'}
   %tr
     %th Nombre
     %th Imagen
@@ -16,6 +39,5 @@
       %td= link_to 'Edit', edit_reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo)
       %td= link_to 'Destroy', reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Tipo', new_reino_categoria_subcategoria_tipo_path(@subcategoria.categoria.reino, @subcategoria.categoria, @subcategoria)
+= #link_to 'New Tipo', new_reino_categoria_subcategoria_tipo_path(@subcategoria.categoria.reino, @subcategoria.categoria, @subcategoria)
