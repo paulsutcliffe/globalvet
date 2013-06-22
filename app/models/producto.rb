@@ -19,4 +19,9 @@ class Producto < ActiveRecord::Base
     matches = Soulmate::Matcher.new('producto').matches_for_term(term)
     matches.collect {|match| {"id" => match["id"], "label" => match["term"], "value" => match["term"] } }
   end
+
+  def self.busqueda(busqueda)
+    search_condition = "%" + busqueda + "%"
+    find(:all, :conditions => ['nombre LIKE ? OR descripcion LIKE ?', search_condition, search_condition])
+  end
 end

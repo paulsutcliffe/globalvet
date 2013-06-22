@@ -2,6 +2,10 @@ Globalvet::Application.routes.draw do
 
   get "productos/autocompletar_nombre_de_producto"
 
+  match "/resultado_de_busqueda" => "productos#resultado_de_busqueda", via: :get
+
+  get "productos/sin_resultados"
+
   devise_for :admins
 
   match "quienes_somos" => "quienes_somos#index", via: :get

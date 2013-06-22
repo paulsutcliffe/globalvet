@@ -27,3 +27,7 @@ end
 16.times do
   FactoryGirl.create :contacto
 end
+
+3.times do
+  FactoryGirl.create :diapositiva
+end

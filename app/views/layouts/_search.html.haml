@@ -1,6 +1,6 @@
 .header-search
-  %form
-    %input{:id=>'nombre_de_producto',:type=>'text'}
-    %input{:type=>'submit', :value=>''}
+  = form_tag resultado_de_busqueda_path, :method => 'get' do
+    = text_field_tag :busqueda, params[:busqueda], :id => 'nombre_de_producto'
+    = submit_tag '', :name => nil
 
 = render 'layouts/search_script'
