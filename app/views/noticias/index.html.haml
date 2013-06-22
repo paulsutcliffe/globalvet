@@ -1,23 +1,23 @@
 
 #page-content
-  %h1.page-title 
+  %h1.page-title
     = page_title! 'Noticias'
 
   - if current_admin
     .admin.head
-      = link_to 'New Noticia', new_noticia_path, class: 'button-create'
+      = link_to 'Nueva Noticia', new_noticia_path, class: 'button-create'
 
   .content
     - @noticias.each do |noticia|
       .info.resumen
-        = link_to image_tag(noticia.imagen_url(:thumb_noticia)), noticia
+        = link_to image_tag(noticia.imagen_url(:thumb)), noticia
         .textual-content
           %h3.title= noticia.titulo
           = paragraph_truncate(noticia.contenido, 200)
           - if current_admin
             .admin-iterate
-              = link_to 'Edit', edit_noticia_path(noticia)
-              = link_to 'Destroy', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }
+              = link_to 'Editar', edit_noticia_path(noticia)
+              = link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
         = link_to 'Leer más', noticia, class: 'button button-readmore'
 

@@ -16,12 +16,12 @@ end
   FactoryGirl.create :noticia
 end
 
-3.times do
+6.times do
   FactoryGirl.create :producto
 end
 
-3.times do
-  FactoryGirl.create :diapositiva
+6.times do
+  FactoryGirl.create :categoria
 end
 
 16.times do

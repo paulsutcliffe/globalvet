@@ -1,10 +1,10 @@
 Globalvet::Application.routes.draw do
 
+  get "productos/autocompletar_nombre_de_producto"
+
   devise_for :admins
 
   match "quienes_somos" => "quienes_somos#index", via: :get
-
-  get "productos/autocomplete_nombre_de_producto"
 
   resources :marcas, :except => :show
 

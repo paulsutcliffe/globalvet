@@ -36,30 +36,18 @@ class ImagenUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+
   version :thumb do
     process :resize_to_fill => [70, 70]
   end
 
-  version :regular do
-    process :resize_to_fill => [190, 325]
-  end
-
   version :medium do
-    process :resize_to_fill => [165, 165]
-  end
-
-  version :thumb_noticia do
-    process :resize_to_fill => [70, 70]
-  end
-  version :default_noticia do
     process :resize_to_fill => [180, 180]
   end
 
-  version :default_productos do
-    process :resize_to_fill => [180, 315]
+  version :vertical do
+    process :resize_to_fill => [190, 325]
   end
-
- 
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

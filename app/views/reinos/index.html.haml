@@ -1,41 +1,21 @@
 #page-content
-  
+
   %h3.heading
     = page_title! 'Reinos'
 
   - if current_admin
     .admin.head
-      = link_to 'New Reino', new_reino_path, class: 'button-create'
+      = link_to 'Nuevo Reino', new_reino_path, class: 'button-create'
 
   .content.presentacion
-    
-    = image_tag('/system/uploads/reino/imagen/1/default_productos_imagen_categoria.jpg')
+    = image_tag('/assets/imagen_categoria.jpg')
+
     .textual-content
       - @reinos.each do |reino|
         %h3.heading
           = link_to reino.nombre, reino_categorias_path(reino)
+
         - if current_admin
           .admin-iterate
-            = link_to 'Edit', edit_reino_path(reino)
-            = link_to 'Destroy', reino, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-        = #image_tag(reino.imagen_url(:default_productos))
-
-%table{:style => 'display: none'}
-  %tr
-    %th Nombre
-    %th Imagen
-    %th
-    %th
-    %th
-
-  - @reinos.each do |reino|
-    %tr
-      %td= reino.nombre
-      %td= reino.imagen
-      %td= link_to 'Show', reino_categorias_path(reino)
-      %td= link_to 'Edit', edit_reino_path(reino)
-      %td= link_to 'Destroy', reino, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
+            = link_to 'Editar', edit_reino_path(reino)
+            = link_to 'Eliminar', reino, :method => :delete, :data => { :confirm => 'Are you sure?' }

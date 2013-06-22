@@ -1,15 +1,19 @@
-%p#notice= notice
+#page-content
 
-%p
-  %b Nombre:
-  = @producto.nombre
-%p
-  %b Descripcion:
-  = @producto.descripcion
-%p
-  %b Archivo pdf:
-  = @producto.archivo_pdf
+  %h3.heading
+    = page_title! 'Reinos'
 
-= link_to 'Edit', edit_reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto)
-\|
-= link_to 'Back', reino_categoria_subcategoria_tipo_productos_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo)
+  .content.presentacion
+    = image_tag @producto.imagen_url(:vertical) if @producto.imagen?
+
+    .textual-content
+      %h3.heading
+        = @producto.nombre
+
+      = paragraph(@producto.descripcion)
+      Descargar PDF
+      = link_to @producto.archivo_pdf_url, @producto.archivo_pdf_url, class: 'button-pdf'
+      - if current_admin
+        .admin-iterate
+          = link_to 'Edit', edit_reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto)
+          = link_to 'Destroy', reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto), :method => :delete, :data => { :confirm => 'Are you sure?' }

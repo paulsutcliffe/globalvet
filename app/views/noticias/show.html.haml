@@ -1,19 +1,17 @@
 
 #page-content
-  %h1.page-title 
+  %h1.page-title
     = page_title! 'Noticias'
 
   - if current_admin
     .admin.head
-      = link_to 'New Noticia', new_noticia_path, class: 'button-create'
-      = link_to 'Edit', edit_noticia_path(@noticia)
+      = link_to 'Nueva Noticia', new_noticia_path, class: 'button-create'
+      = link_to 'Editar', edit_noticia_path(@noticia), class: 'button-create'
   %h3.heading
     = @noticia.titulo
   .content.presentacion
-    = image_tag(@noticia.imagen_url(:default_noticia))
+    = image_tag(@noticia.imagen_url(:medium))
     .textual-content
       = paragraph(@noticia.contenido)
-      = @noticia.imagen
 
-
-  = link_to 'Back', noticias_path, class: 'button-back'
+  = link_to 'Regresar', noticias_path, class: 'button-back'
