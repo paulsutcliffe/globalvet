@@ -195,6 +195,14 @@ form {margin: 0}
   }
 }
 
+.sin_resultados {
+  #page-content {
+    .content {height: 400px;
+      p {font-size: $big; text-align: center; padding-top: 180px}
+    }
+  }
+}
+
 .titulo-parrafo {
   h3, p {display: inline }
   h3 a {@extend .paragraph-1; color: $red}
