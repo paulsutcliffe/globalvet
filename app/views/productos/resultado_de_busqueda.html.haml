@@ -1,12 +1,15 @@
-#page-content
-  %h1.page-title
-    = page_title! 'Resultado de búsqueda'
+- page_title! 'Resultado de búsqueda'
 
-  .content
+#page-content
+  %header.content-header.content-header-search
+    Resultados 1 - 8 de 14 para 
+    %b
+      Hidrosui
+  .content.presentacion.titulo-parrafo
     - @productos.each do |producto|
       .info.resumen
-        = link_to image_tag(producto.imagen_url(:medium)), reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
+        = link_to image_tag(producto.imagen_url(:thumb_busqueda)), reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
         .textual-content
           %h3.title= link_to producto.nombre, reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
           = paragraph_truncate(producto.descripcion, 200)
-          = link_to '+ Información', reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
+          = link_to '+ Información', reino_categoria_subcategoria_tipo_producto_path(producto.tipo.subcategoria.categoria.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto), class: 'link-more'

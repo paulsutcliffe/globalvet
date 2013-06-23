@@ -13,6 +13,8 @@
 
 .border-black {border: 1px solid black}
 
+.link-more {color: $gray; font-weight: bold}
+
 
 @mixin submenu {
   .submenu {
@@ -135,7 +137,7 @@
 
 // paragraphs
 .paragraph-1 {
-  color: $gray; font-family: $trebuchet; margin: 0;
+  color: $gray; font-family: $trebuchet; margin: 0; font-size: $small;
 }
 
 .arrow-title {

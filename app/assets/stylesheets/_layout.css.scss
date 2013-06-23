@@ -3,7 +3,8 @@ body {font-family: $comfortaa; background: $red; overflow-y: scroll}
 h1, h2, h3, h4, h5, h6 {line-height: 100%; @extend .font-comfortaa-3; margin: 0}
 .heading {@extend .font-large-x; color: $red; padding-bottom: $separation;
   a {color: $red}}
-.title {@extend .title-1}
+.title,
+.title a {@extend .title-1}
 .page-title {@include absolute(left, top, 0px, 0);
 background: $page-title; @include size(870px, 90px); padding: 20px 0 0 40px; @include box-sizing(border-box);
 @extend .font-title; @extend .font-comfortaa-7; color: $red;
@@ -119,6 +120,9 @@ form {margin: 0}
    .product-page & {
       padding-top: 30px;
     }
+   header {
+    b {color: $red}
+   }
   }
 }
 
@@ -191,7 +195,10 @@ form {margin: 0}
   }
 }
 
-
+.titulo-parrafo {
+  h3, p {display: inline }
+  h3 a {@extend .paragraph-1; color: $red}
+}
 
 
 form {
@@ -222,10 +229,17 @@ form {
 
 .bg-full-image {width: 897px; max-width: 897px; position: relative; top: -20px; left: -59px}
 
+.content-header {font-size: $medium;
+  height: 60px; padding-left: 55px; 
+  &.content-header-search {
+    background: $icon-search
+  }
+}
+
 
 // buttons
 .button-create {@extend .btn; @extend .btn-default}
 .button-readmore {@extend .btn; @extend .btn-default; @extend .boton-rojo}
 .button-back {@extend .btn; @extend .btn-default; @extend .boton-rojo}
 .button-pdf {background: $pdf-icon; @include size(38px, 37px); display: block; text-indent: -9999px}
-
+.link-more {@include absolute(bottom, left, 17px, 210px)}
