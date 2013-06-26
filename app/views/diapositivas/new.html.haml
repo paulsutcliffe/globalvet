@@ -1,5 +1,10 @@
-%h1 Nueva diapositiva
+#page-content
+  %h1.page-title
+    = page_title! 'Editar diapositiva'
+   
+  .admin.head
+    = link_to 'New Diapositiva', new_diapositiva_path, class: 'button-create'
+  .content
+    = render 'form'
 
-= render 'form'
-
-= link_to 'Regresar', diapositivas_path
+    = link_to 'Regresar', diapositivas_path, class: 'button-back-cms'
