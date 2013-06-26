@@ -1,5 +1,10 @@
-%h1 Editando tipo
+#page-content
+  %h1.page-title
+    = page_title! 'Editando tipo'
+    
+  .content
+    = render 'form'
 
-= render 'form'
+    = # link_to 'Regresar', _path, class: 'button-back-cms'
 
-= link_to 'Regresar', tipos_path
+

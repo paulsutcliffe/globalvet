@@ -1,5 +1,10 @@
-%h1 Nueva subcategoria
+#page-content
+  %h1.page-title
+    = page_title! 'Nueva subcategoria'
+    
+  .content
+    = render 'form'
 
-= render 'form'
+    = link_to 'Regresar', reino_categoria_subcategorias_path(@categoria.reino, @categoria), class: 'button-back-cms'
 
-= link_to 'Regresar', reino_categoria_subcategorias_path(@categoria.reino, @categoria)
+

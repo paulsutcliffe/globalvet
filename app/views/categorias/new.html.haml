@@ -1,5 +1,10 @@
-%h1 Nueva categoria
+#page-content
+  %h1.page-title
+    = page_title! 'Nueva categoria'
+    
+  .content
+    = render 'form'
 
-= render 'form'
+    = link_to 'Regresar', reino_categorias_path(@reino), class: 'button-back-cms'
 
-= link_to 'Regresar', reino_categorias_path(@reino)
+

@@ -1,7 +1,9 @@
-%h1 Editando producto
+#page-content
+  %h1.page-title
+    = page_title! 'Editando producto'
+    
+  .content
+    = render 'form'
 
-= render 'form'
-
-= link_to 'Ver', reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto)
-\|
-= link_to 'Regresar', reino_categoria_subcategoria_tipo_productos_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo)
+    = link_to 'Ver', reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto), class: 'button-back-cms'
+    = link_to 'Regresar', reino_categoria_subcategoria_tipo_productos_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo), class: 'button-back-cms'

@@ -1,5 +1,9 @@
-%h1 Editando categoria
+#page-content
+  %h1.page-title
+    = page_title! 'Editando reino'
+    
+  .content
+    = render 'form'
 
-= render 'form'
+    = #link_to 'Regresar', _path, class: 'button-back-cms'
 
-= link_to 'Regresar', categorias_path

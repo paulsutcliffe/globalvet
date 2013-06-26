@@ -1,5 +1,10 @@
-%h1 Editando subcategoria
+#page-content
+  %h1.page-title
+    = page_title! 'Editando subcategoria'
+    
+  .content
+    = render 'form'
 
-= render 'form'
+    = #link_to 'Regresar', _path, class: 'button-back-cms'
 
-= link_to 'Regresar', subcategorias_path
+
