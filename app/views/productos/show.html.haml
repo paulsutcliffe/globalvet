@@ -15,5 +15,5 @@
       = link_to @producto.archivo_pdf_url, @producto.archivo_pdf_url, class: 'button-pdf'
       - if current_admin
         .admin-iterate
-          = link_to 'Edit', edit_reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto)
-          = link_to 'Destroy', reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto), :method => :delete, :data => { :confirm => 'Are you sure?' }
+          = link_to 'Edit', edit_reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto), class: 'button-update'
+          = link_to 'Destroy', reino_categoria_subcategoria_tipo_producto_path(@producto.tipo.subcategoria.categoria.reino, @producto.tipo.subcategoria.categoria, @producto.tipo.subcategoria, @producto.tipo, @producto), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'

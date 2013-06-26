@@ -16,8 +16,8 @@
           = paragraph_truncate(noticia.contenido, 200)
           - if current_admin
             .admin-iterate
-              = link_to 'Editar', edit_noticia_path(noticia)
-              = link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }
+              = link_to 'Editar', edit_noticia_path(noticia), class: 'button-update'
+              = link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
 
         = link_to 'Leer más', noticia, class: 'button button-readmore'
 

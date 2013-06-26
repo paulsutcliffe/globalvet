@@ -1,7 +1,9 @@
-%h1 Editando noticia
+#page-content
+  %h1.page-title
+    = page_title! 'Editar Noticia'
+    
+  .content
+    = render 'form'
 
-= render 'form'
+    = link_to 'Regresar', noticias_path, class: 'button-back-cms'
 
-= link_to 'Ver', @noticia
-\|
-= link_to 'Regresar', noticias_path

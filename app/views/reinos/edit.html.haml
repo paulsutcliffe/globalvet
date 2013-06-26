@@ -1,5 +1,10 @@
-%h1 Editando reino
+#page-content
+  %h1.page-title
+    = page_title! 'Editando reino'
+    
+  .content
+    = render 'form'
 
-= render 'form'
+    = link_to 'Regresar', reinos_path, class: 'button-back-cms'
 
-= link_to 'Regresar', reinos_path
+

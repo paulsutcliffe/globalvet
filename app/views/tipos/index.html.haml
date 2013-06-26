@@ -17,5 +17,5 @@
 
         - if current_admin
           .admin-iterate
-            = link_to 'Editar', edit_reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo)
-            = link_to 'Eliminar', reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo), :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to 'Editar', edit_reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo), class: 'button-update'
+            = link_to 'Eliminar', reino_categoria_subcategoria_tipo_path(tipo.subcategoria.categoria.reino, tipo.subcategoria.categoria, tipo.subcategoria, tipo), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'

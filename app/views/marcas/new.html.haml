@@ -1,5 +1,10 @@
-%h1 Nueva marca
+#page-content
+  %h1.page-title
+    = page_title! 'Nueva marca'
+    
+  .content
+    = render 'form'
 
-= render 'form'
+    = link_to 'Regresar', marcas_path, class: 'button-back-cms'
 
-= link_to 'Regresar', marcas_path
+

@@ -3,5 +3,9 @@
     $("#nombre_de_producto" ).autocomplete({
       source: "<%= productos_autocompletar_nombre_de_producto_path %>"
     });
+  search_wrapper = $('.header-search');
+  autocompletar = $('.ui-autocomplete');
+
+  autocompletar.appendTo(search_wrapper);
   })
 </script>

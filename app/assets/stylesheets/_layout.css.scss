@@ -61,7 +61,7 @@ form {margin: 0}
 .header-search {
   @include absolute(right, top, 0, 70px); background: $search-header; @include size(245px, 45px);
   form {
-    input[type="text"] {@include absolute(right, top, 10px, 12px);
+    input[type="text"], input[type="password"], input[type="email"] {@include absolute(right, top, 10px, 12px);
     @include size(125px, auto); padding: 0 8px 0 4px; background: none;  border: 0;
     @include box-shadow(0, 0, 0, transparent)}
     input[type="submit"] {@include absolute(top, left, 1px, 2px); @include size(83px, 40px); 
@@ -117,7 +117,8 @@ form {margin: 0}
    @extend .extension-del-content; 
    @extend .shadow-element;
    @extend .radius-bottom;
-   .product-page & {
+   .product-page.index &,
+   .product-page.show & {
       padding-top: 30px;
     }
    header {
@@ -211,7 +212,7 @@ form {margin: 0}
 
 form {
   legend {color: $gray; text-transform: uppercase; border-bottom: 0; font-size: $medium; margin: 0; padding-bottom: $separation}
-  input[type="text"], textarea, submit, button {@extend .form-element }
+  input[type="text"], input[type="password"], input[type="email"], textarea, submit, button {@extend .form-element }
   input[type="text"] {@extend .input-style;}
   textarea {@extend .textarea-style; width: 500px; min-width: 500px; max-width: 795px; height: 160px; min-height: 160px}
   button, submit {@extend .button-style}
@@ -220,6 +221,7 @@ form {
   .field {
     label {color: $gray; margin: 5px 0 0 0}
   }
+  .actions {padding-top: 20px}
 
   #contactos & {
     input[type="text"] {margin-right: 10px}
@@ -227,11 +229,13 @@ form {
   }
 }
 
+
+
 .img-gallery {
-  a {
-    @include inline-block; margin-right: 25px;
+  .img-wrapper {
+    @include inline-block; margin-right: 25px; position: relative;
     @include size(165px, 158px);
-    img {}
+    .admin.iterate {@include absolute(right, bottom, 0, 0)}
   }
 }
 
@@ -245,9 +249,42 @@ form {
 }
 
 
+body[id^="devise"] {
+  .field br {display: none}
+  .actions {padding: 15px 0}
+}
+
+.admin {
+  &.head {
+    padding-bottom: 40px;
+  }
+  &.iterate {
+    padding-bottom: 20px
+  }
+}
+
+
 // buttons
-.button-create {@extend .btn; @extend .btn-default}
+.button-create {@extend .btn; @extend .btn-default; @extend .btn-primary}
+.button-update {@extend .btn; @extend .btn-default; @extend .btn-info}
+.button-delete {@extend .btn; @extend .btn-default; @extend .btn-warning}
 .button-readmore {@extend .btn; @extend .btn-default; @extend .boton-rojo}
 .button-back {@extend .btn; @extend .btn-default; @extend .boton-rojo}
+.button-back-cms {@extend .btn; @extend .btn-default; @extend .btn-inverse; margin-top: 20px} 
 .button-pdf {background: $pdf-icon; @include size(38px, 37px); display: block; text-indent: -9999px}
 .link-more {@include absolute(bottom, left, 17px, 210px)}
+
+/*
+btn btn-primary
+btn btn-info
+btn btn-success
+btn btn-warning
+btn btn-danger
+btn btn-inverse
+btn btn-link
+*/
+
+
+.header-search .ui-autocomplete {position: absolute !important; top: 100% !important; background: #ddd;
+font-size: 12px}
+.ui-menu .ui-menu-item {border-bottom: 1px solid #bbb; border-top: 1px solid #eee}

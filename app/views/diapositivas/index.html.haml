@@ -15,8 +15,8 @@
       %td= diapositiva.titulo
       %td= diapositiva.link
       %td= link_to 'Show', diapositiva
-      %td= link_to 'Edit', edit_diapositiva_path(diapositiva)
-      %td= link_to 'Destroy', diapositiva, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Edit', edit_diapositiva_path(diapositiva), class: 'button-update'
+      %td= link_to 'Destroy', diapositiva, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
 
 %br
 

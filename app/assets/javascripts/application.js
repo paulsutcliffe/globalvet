@@ -18,3 +18,11 @@
 // Loads all Bootstrap javascripts
 //= require bootstrap-transition
 //= require bootstrap-carousel
+
+
+$(document).ready(function() {
+  search_wrapper = $('.header-search');
+  autocompletar = $('.ui-autocomplete');
+
+  autocompletar.appendTo(search_wrapper);
+});

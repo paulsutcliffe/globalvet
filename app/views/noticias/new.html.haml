@@ -1,5 +1,8 @@
-%h1 Nueva noticia
+#page-content
+  %h1.page-title
+    = page_title! 'Nueva Noticia'
+    
+  .content
+    = render 'form'
 
-= render 'form'
-
-= link_to 'Regresar', noticias_path
+    = link_to 'Regresar', noticias_path, class: 'button-back-cms'

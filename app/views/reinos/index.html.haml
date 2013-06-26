@@ -16,6 +16,6 @@
           = link_to reino.nombre, reino_categorias_path(reino)
 
         - if current_admin
-          .admin-iterate
-            = link_to 'Editar', edit_reino_path(reino)
-            = link_to 'Eliminar', reino, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          .admin.iterate
+            = link_to 'Editar', edit_reino_path(reino), class: 'button-update'
+            = link_to 'Eliminar', reino, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
