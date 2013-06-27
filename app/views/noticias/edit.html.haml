@@ -1,8 +1,10 @@
 #page-content
   %h1.page-title
     = page_title! 'Editar Noticia'
-    
+
   .content
+    = image_tag(@noticia.imagen_url(:medium))
+
     = render 'form'
 
     = link_to 'Regresar', noticias_path, class: 'button-back-cms'

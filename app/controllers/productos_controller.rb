@@ -24,6 +24,7 @@ class ProductosController < InheritedResources::Base
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
     @tipo = Tipo.find(params[:tipo_id])
     @producto.tipo_id = @tipo.id
+    @producto.reino_id = @reino.id
     create! { reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, @tipo)}
   end
 
@@ -42,7 +43,7 @@ class ProductosController < InheritedResources::Base
   def resultado_de_busqueda
     @productos = Producto.busqueda(params['busqueda'])
     if @productos.empty?
-      redirect_to action: 'sin_resultados'
+      redirect_to action: 'sin_resultados', :busqueda => params[:busqueda]
     end
   end
 

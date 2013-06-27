@@ -6,6 +6,7 @@ class Reino < ActiveRecord::Base
   has_many :naturalezas
   has_many :categorias, :through => :naturalezas
   has_many :subcategorias
+  has_many :productos
 
   mount_uploader :imagen, ImagenUploader
 

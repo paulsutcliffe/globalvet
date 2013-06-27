@@ -1,28 +1,28 @@
 #page-content
   %h1.page-title
     = page_title! 'Diapositivas'
-   
+
   .admin.head
-    = link_to 'New Diapositiva', new_diapositiva_path, class: 'button-create'
+    = link_to 'Nueva Diapositiva', new_diapositiva_path, class: 'button-create'
   .content
 
 
     %table
       %tr
         %th Slide
-        %th Titulo
+        %th Título
         %th Link
         %th
         %th
         %th
-    
+
       - @diapositivas.each do |diapositiva|
         %tr
           %td= link_to image_tag(diapositiva.slide_url(:thumb))
           %td= diapositiva.titulo
           %td= diapositiva.link
-          %td= link_to 'Edit', edit_diapositiva_path(diapositiva), class: 'button-update'
-          %td= link_to 'Destroy', diapositiva, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
-    
+          %td= link_to 'Editar', edit_diapositiva_path(diapositiva), class: 'button-update'
+          %td= link_to 'Eliminar', diapositiva, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
+
     %br
-    
+

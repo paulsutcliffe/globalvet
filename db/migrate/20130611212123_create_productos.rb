@@ -7,6 +7,7 @@ class CreateProductos < ActiveRecord::Migration
       t.string :imagen
       t.string :slug
       t.integer :tipo_id
+      t.integer :reino_id
 
       t.timestamps
     end

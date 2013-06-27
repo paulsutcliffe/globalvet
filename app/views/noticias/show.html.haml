@@ -5,7 +5,6 @@
 
   - if current_admin
     .admin.head
-      = link_to 'Nueva Noticia', new_noticia_path, class: 'button-create'
       = link_to 'Editar', edit_noticia_path(@noticia), class: 'button-create'
   %h3.heading
     = @noticia.titulo
@@ -14,4 +13,4 @@
     .textual-content
       = paragraph(@noticia.contenido)
 
-  = link_to 'Regresar', noticias_path, class: 'button-back'
+  = link_to 'Regresar', noticias_path, class: 'button-back-cms'

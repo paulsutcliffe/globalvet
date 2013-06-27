@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20130626023116) do
     t.string   "imagen"
     t.string   "slug"
     t.integer  "tipo_id"
+    t.integer  "reino_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

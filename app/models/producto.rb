@@ -4,6 +4,7 @@ class Producto < ActiveRecord::Base
   friendly_id :nombre, use: :slugged
 
   belongs_to :tipo
+  belongs_to :reino
 
   mount_uploader :imagen, ImagenUploader
   mount_uploader :archivo_pdf, PdfUploader

@@ -7,7 +7,10 @@
   .carousel-inner
     - @diapositivas.each do |slide|
       .item
-        = image_tag slide.slide_url(:regular)
+        - if current_admin
+          = link_to (image_tag slide.slide_url(:regular)), diapositivas_path
+        - else
+          = image_tag slide.slide_url(:regular)
         .carousel-caption
           = link_to slide.titulo, slide.link
 
@@ -18,5 +21,5 @@
 :javascript
   $(document).ready(function() {
     $('.carousel-inner .item:eq(0), .carousel-indicators li:eq(0)').addClass('active');
-  
+
   });
