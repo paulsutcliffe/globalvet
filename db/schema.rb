@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618161229) do
+ActiveRecord::Schema.define(:version => 20130626023116) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20130618161229) do
     t.string   "nombre"
     t.string   "imagen"
     t.string   "slug"
-    t.integer  "reino_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -64,6 +63,13 @@ ActiveRecord::Schema.define(:version => 20130618161229) do
     t.string   "link"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "naturalezas", :force => true do |t|
+    t.integer  "categoria_id"
+    t.integer  "reino_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "noticias", :force => true do |t|
@@ -105,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20130618161229) do
     t.string   "imagen"
     t.string   "slug"
     t.integer  "categoria_id"
+    t.integer  "reino_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

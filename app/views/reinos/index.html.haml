@@ -13,7 +13,7 @@
     .textual-content
       - @reinos.each do |reino|
         %h3.heading
-          = link_to reino.nombre, reino_categorias_path(reino)
+          = link_to reino.nombre, categorias_reino_path(reino)
 
         - if current_admin
           .admin.iterate

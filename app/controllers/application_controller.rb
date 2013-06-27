@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
   def load_products_tree
     @reinos_tree = Reino.select("id, nombre, slug").all
-    @categorias_tree = Categoria.select("id, nombre, slug, reino_id").all
     @subcategorias_tree = Subcategoria.select("id, nombre, slug, categoria_id").all
     @tipos_tree = Tipo.select("id, nombre, slug, subcategoria_id").all
   end

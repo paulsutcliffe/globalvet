@@ -1,0 +1,23 @@
+%h1
+  = 'Reinos de ' + @categoria.nombre
+
+= image_tag @categoria.imagen_url(:vertical) if @categoria.imagen?
+
+- if @reinos.length > 0
+  = form_tag(categoria_eliminar_reino_path(@categoria)) do
+    - for reino in @reinos do
+      = reino.nombre
+      = check_box_tag 'reinos[]', reino.id
+    = submit_tag 'Eliminar reinos'
+- else
+  No pertenece a ningún reino aún.
+
+
+%h2 Agrega a reino
+
+- if @categoria.reinos.count < Reino.count then
+  = form_tag(categoria_agregar_reino_path(@categoria)) do
+    = select_tag(:reino, options_from_collection_for_select(@categoria.reinos_no_enlistados, :id, :nombre))
+    = submit_tag 'Agregar'
+- else
+  = @categoria.nombre + ' pertenece a todos los reinos.'

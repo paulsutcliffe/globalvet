@@ -5,6 +5,7 @@ class CreateSubcategorias < ActiveRecord::Migration
       t.string :imagen
       t.string :slug
       t.integer :categoria_id
+      t.integer :reino_id
 
       t.timestamps
     end

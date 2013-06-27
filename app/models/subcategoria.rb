@@ -5,6 +5,7 @@ class Subcategoria < ActiveRecord::Base
 
   has_many :tipos
   belongs_to :categoria
+  belongs_to :reino
 
   mount_uploader :imagen, ImagenUploader
 end

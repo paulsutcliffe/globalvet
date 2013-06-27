@@ -13,13 +13,20 @@ Globalvet::Application.routes.draw do
   resources :marcas, :except => :show
 
   resources :reinos do
+    member do
+      get :enlistar
+      get :categorias
+    end
+    post :agregar_categoria
+    post :eliminar_categoria
+
     resources :categorias do
       resources :subcategorias do
         resources :tipos do
           resources :productos
         end
       end
-    end
+     end
   end
 
   resources :noticias

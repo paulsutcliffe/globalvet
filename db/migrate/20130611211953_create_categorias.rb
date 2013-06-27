@@ -4,7 +4,6 @@ class CreateCategorias < ActiveRecord::Migration
       t.string :nombre
       t.string :imagen
       t.string :slug
-      t.integer :reino_id
 
       t.timestamps
     end

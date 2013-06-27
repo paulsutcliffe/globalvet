@@ -10,16 +10,16 @@
       %span Productos
     - unless @reinos_tree.empty?
       %ul.submenu.nivel-1
-        - @reinos_tree.select do |reino_tree|
+        - @reinos_tree.each do |reino_tree|
           %li
             = link_to_unless_current reino_tree.nombre, reino_categorias_path(reino_tree) do
               %span= reino_tree.nombre
 
             // end submenu nivel 1
 
-            - unless @categorias_tree.empty?
+            - unless reino_tree.categorias.empty?
               %ul.submenu.nivel-2
-                - @categorias_tree.select { |cat| cat.reino_id == reino_tree.id }.each do |categoria_tree|
+                - reino_tree.categorias.each do |categoria_tree|
                   %li
                     = link_to_unless_current categoria_tree.nombre, reino_categoria_subcategorias_path(reino_tree, categoria_tree) do
                       %span= categoria_tree.nombre

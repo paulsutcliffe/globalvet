@@ -21,7 +21,7 @@ end
 end
 
 6.times do
-  FactoryGirl.create :categoria
+  FactoryGirl.create :reino
 end
 
 16.times do

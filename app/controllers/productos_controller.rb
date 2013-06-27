@@ -1,6 +1,39 @@
 class ProductosController < InheritedResources::Base
   before_filter :authenticate_admin!, only: [:new, :edit, :create, :update, :destroy]
-  belongs_to :tipo
+
+  def index
+    @reino = Reino.find(params[:reino_id])
+    @categoria = Categoria.find(params[:categoria_id])
+    @subcategoria = Subcategoria.find(params[:subcategoria_id])
+    @tipo = Tipo.find(params[:tipo_id])
+    @productos = Producto.where("tipo_id = ?", @tipo.id)
+  end
+
+  def new
+    @producto = Producto.new
+    @tipo = Tipo.find(params[:tipo_id])
+    @subcategoria = Subcategoria.find(params[:subcategoria_id])
+    @categoria = Categoria.find(params[:categoria_id])
+    @reino = Reino.find(params[:reino_id])
+  end
+
+  def create
+    @producto = Producto.new(params[:producto])
+    @reino = Reino.find(params[:reino_id])
+    @categoria = Categoria.find(params[:categoria_id])
+    @subcategoria = Subcategoria.find(params[:subcategoria_id])
+    @tipo = Tipo.find(params[:tipo_id])
+    @producto.tipo_id = @tipo.id
+    create! { reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, @tipo)}
+  end
+
+  def show
+    @producto = Producto.find(params[:id])
+    @reino = Reino.find(params[:reino_id])
+    @categoria = Categoria.find(params[:categoria_id])
+    @subcategoria = Subcategoria.find(params[:subcategoria_id])
+    @tipo = Tipo.find(params[:tipo_id])
+  end
 
   def autocompletar_nombre_de_producto
     render :json => Producto.search(params['term'])

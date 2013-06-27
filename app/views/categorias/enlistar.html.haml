@@ -1,0 +1,7 @@
+- if @reino.categorias.count > 0
+  - for categoria in @reino.categorias do
+    = link_to categoria.nombre, categoria
+- else
+  No hay categoria enlistadas.
+
+= link_to 'Regresar', @reino

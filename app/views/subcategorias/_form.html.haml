@@ -1,4 +1,4 @@
-= form_for [@subcategoria.categoria.reino, @subcategoria.categoria, @subcategoria], :html => { multipart: true } do |f|
+= form_for [@reino, @categoria, @subcategoria], :html => { multipart: true } do |f|
   - if @subcategoria.errors.any?
     #error_explanation
       %h2= "#{pluralize(@subcategoria.errors.count, "error")} prohibited this subcategoria from being saved:"
