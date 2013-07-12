@@ -1,9 +1,9 @@
 #page-content
   %h1.page-title
-    = page_title! 'Diapositivas'
+    = page_title! 'Banner Rotator'
 
   .admin.head
-    = link_to 'Nueva Diapositiva', new_diapositiva_path, class: 'button-create'
+    = link_to 'Nuevo Slide', new_diapositiva_path, class: 'button-create'
   .content
 
 
@@ -18,7 +18,7 @@
 
       - @diapositivas.each do |diapositiva|
         %tr
-          %td= link_to image_tag(diapositiva.slide_url(:thumb))
+          %td= image_tag(diapositiva.slide_url(:thumb))
           %td= diapositiva.titulo
           %td= diapositiva.link
           %td= link_to 'Editar', edit_diapositiva_path(diapositiva), class: 'button-update'

@@ -16,5 +16,5 @@
           = link_to subcategoria.nombre, reino_categoria_subcategoria_tipos_path(@reino, @categoria, subcategoria)
         - if current_admin
           .admin-iterate
-            = link_to 'Editar', edit_reino_categoria_subcategoria_path(@reino, @categoria, subcategoria)
-            = link_to 'Eliminar', reino_categoria_subcategoria_path(@reino, @categoria, subcategoria), :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to 'Editar', edit_reino_categoria_subcategoria_path(@reino, @categoria, subcategoria), class: 'button-update'
+            = link_to 'Eliminar', reino_categoria_subcategoria_path(@reino, @categoria, subcategoria), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'

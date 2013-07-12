@@ -41,9 +41,13 @@ class ProductosController < InheritedResources::Base
   end
 
   def resultado_de_busqueda
-    @productos = Producto.busqueda(params['busqueda'])
-    if @productos.empty?
-      redirect_to action: 'sin_resultados', :busqueda => params[:busqueda]
+    if params['busqueda'].empty?
+      redirect_to reinos_path
+    else
+      @productos = Producto.busqueda(params['busqueda'])
+      if @productos.empty?
+        redirect_to action: 'sin_resultados', :busqueda => params[:busqueda]
+      end
     end
   end
 

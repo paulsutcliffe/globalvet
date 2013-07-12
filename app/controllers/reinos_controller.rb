@@ -1,5 +1,5 @@
 class ReinosController < InheritedResources::Base
-  before_filter :authenticate_admin!, except: [:index, :show]
+  before_filter :authenticate_admin!, except: [:index, :show, :categorias]
 
   def create
     create! { categorias_reino_path(@reino) }

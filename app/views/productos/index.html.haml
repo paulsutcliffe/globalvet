@@ -5,7 +5,7 @@
 
   - if current_admin
     .admin.head
-      = link_to 'New Producto', new_reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo), class: 'button-create'
+      = link_to 'Nuevo Producto', new_reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo), class: 'button-create'
 
   .content.presentacion
     = image_tag @tipo.imagen_url(:vertical) if @tipo.imagen?
@@ -18,5 +18,5 @@
         = paragraph(producto.descripcion)
         - if current_admin
           .admin-iterate
-            = link_to 'Editar', edit_reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, producto)
-            = link_to 'Eliminar', reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, producto), :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to 'Editar', edit_reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, producto), class: 'button-update'
+            = link_to 'Eliminar', reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, producto), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'

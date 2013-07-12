@@ -1,5 +1,9 @@
-%h1 Nuevo producto
+#page-content
 
-= render 'form'
+  %h1.page-title
+    = page_title! 'Nuevo producto'
 
-= link_to 'Regresar', reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, @tipo)
+  .content
+    = render 'form'
+
+    = link_to 'Regresar', reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, @tipo), class: 'button-back-cms'

@@ -6,7 +6,7 @@ Globalvet::Application.routes.draw do
 
   get "productos/sin_resultados"
 
-  devise_for :admins
+  devise_for :admins, :path => "cms", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
 
   match "quienes_somos" => "quienes_somos#index", via: :get
 
