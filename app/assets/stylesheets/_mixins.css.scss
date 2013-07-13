@@ -18,6 +18,7 @@
 
 @mixin submenu {
   .submenu {
+    @include transition-2;
     width: 100%;
     width: -moz-calc(100% - 2px); width: -webkit-calc(100% - 2px); width: -o-calc(100% - 2px); width: calc(100% - 2px);
     @include display-false;
@@ -84,6 +85,11 @@
 @mixin transition-1 {
   -moz-transition: 0.5s $easeOut all; -webkit-transition: 0.5s $easeOut all;
   -o-transition: 0.5s $easeOut all; transition: 0.5s $easeOut all
+}
+
+@mixin transition-2 {
+  -moz-transition: 2.5s $easeOut all; -webkit-transition: 2.5s $easeOut all;
+  -o-transition: 2.5s $easeOut all; transition: 2.5s $easeOut all
 }
 
 

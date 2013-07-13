@@ -27,11 +27,17 @@ $(document).ready(function() {
   autocompletar.appendTo(search_wrapper);
 
   // Submenu stuff
-  function removeborder() { $('.main-menu').css('border-bottom', '0'); }
-  function addborder() { $('.main-menu').css("border-bottom", "10px solid #FF8800"); }
+  var canHide;
+  function removeborder() {
+    setTimeout(function(){
+      $('.main-menu').css('border-bottom', '0'); canHide = false;  }, 200);
+    }
+  function reseting() {
+    canHide = true;
+    setTimeout(function(){
+      if(canHide == true) { $('.main-menu').css("border-bottom", "10px solid #FF8800"); }
+      }, 2500);
+  }
 
-  $('.arbol-productos a').delay(1200).queue(function(next){
-    next();
-    $(this).hover(removeborder, addborder);
-  });
+  $('.arbol-productos a').hover(removeborder, reseting);
 });

@@ -25,6 +25,15 @@ class ProductosController < InheritedResources::Base
     @reino = Reino.find(params[:reino_id])
   end
 
+  def update
+    @producto = Producto.find(params[:id])
+    @tipo = Tipo.find(params[:tipo_id])
+    @subcategoria = Subcategoria.find(params[:subcategoria_id])
+    @categoria = Categoria.find(params[:categoria_id])
+    @reino = Reino.find(params[:reino_id])
+    update! { reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @producto) }
+  end
+
   def create
     @producto = Producto.new(params[:producto])
     @reino = Reino.find(params[:reino_id])
