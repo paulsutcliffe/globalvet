@@ -5,7 +5,7 @@
   %li
     = link_to_unless_current '¿Quiénes Somos?', quienes_somos_path do
       %span ¿Quiénes Somos?
-  %li
+  %li.arbol-productos
     = link_to_unless_current 'Productos', reinos_path do
       %span Productos
     - unless @reinos_tree.empty?

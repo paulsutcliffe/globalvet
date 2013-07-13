@@ -5,7 +5,7 @@
 .input-style {background: $bg-input; border: 0}
 .textarea-style {background: $bg-textarea; }
 .button-style,
-.button-style:hover {background: $button; border: 0; line-height: 100%; width: 120px; 
+.button-style:hover {background: $button; border: 0; line-height: 100%; width: 120px;
  height: 31px; color: white; text-shadow: $text-shadow}
 .form-element {width: 230px; height: 31px; @extend .rounded-element; border: $stroke}
 
@@ -18,14 +18,15 @@
 
 @mixin submenu {
   .submenu {
-    width: 100%; 
-    width: -moz-calc(100% - 2px); width: -webkit-calc(100% - 2px); width: -o-calc(100% - 2px); width: calc(100% - 2px); 
-    @include display-false; 
-    @include absolute(left, top, 0, -100px);
+    width: 100%;
+    width: -moz-calc(100% - 2px); width: -webkit-calc(100% - 2px); width: -o-calc(100% - 2px); width: calc(100% - 2px);
+    @include display-false;
+    @include absolute(left, top, 0, 10px);
+    z-index: -1;
     //top: 100%;
     li {
       clear: left; width: 100%; padding: 0; background: none;
-      a, span {width: 100%; color: white; text-transform: uppercase; @extend .font-pt-4}
+      a, span {width: 100%; color: white; text-decoration: none; text-transform: uppercase; @extend .font-pt-7}
       a {
         background: $filter-gold;
         &:hover {
@@ -34,17 +35,17 @@
       }
       span {
         background: $filter-red;
-      } 
+      }
     }
 
     &.submenu.nivel-1 {
-      width: 100%; text-align: center; background: $gold;
+      width: 100%; height: 25px; text-align: center; background: $tree;
       li {
-        @include inline-block; width: auto; position: relative;
-        span {color: $red}
-        a, span {padding-left: 45px; padding-right: 45px; background: none}
-        @include submenu-nivel-2; 
-        // @include submenu_hover; 
+        @include inline-block; line-height: 5px; width: auto; position: relative;
+        span {color: $red; line-height: 5px;}
+        a, span {height: 25px; padding-left: 25px; padding-right: 25px; background: none}
+        @include submenu-nivel-2;
+        // @include submenu_hover;
       }
     }
   }
@@ -55,18 +56,18 @@
 @mixin submenu-nivel-2 {
   ul {width: 180px; background: none;
     li {position: relative; width: 100%;
-      a, span {text-align: left; padding-left: 12px; padding-right: 12px; background: $gold}
-      a {background: $gold;
-        &:hover {background: $red}
+      a, span {text-transform: capitalize; text-align: left; padding-left: 12px; padding-right: 12px; background-color:rgba(255,178,0,0.75);}
+      a {background-color:rgba(255,178,0,0.75);
+        &:hover {background-color:rgba(195,44,1,0.75)}
       }
-        @include submenu-nivel-3; 
+        @include submenu-nivel-3;
 
     }
   }
 }
 
 @mixin submenu-nivel-3 {
-  ul {width: 180px; top: auto; left: 100%; 
+  ul {width: 180px; top: auto; left: 100%;
   }
 }
 
@@ -81,13 +82,13 @@
 }
 
 @mixin transition-1 {
-  -moz-transition: 0.8s $easeInOutBack all; -webkit-transition: 0.8s $easeInOutBack all; 
-  -o-transition: 0.8s $easeInOutBack all; transition: 0.8s $easeInOutBack all
+  -moz-transition: 0.5s $easeOut all; -webkit-transition: 0.5s $easeOut all;
+  -o-transition: 0.5s $easeOut all; transition: 0.5s $easeOut all
 }
 
 
 .extension-del-content {
-  width: 870px; position: relative; left: 0px; float: left; 
+  width: 870px; position: relative; left: 0px; float: left;
   padding: 35px 45px 55px; @include box-sizing(border-box); background: $bg-content;
   .not-front & {
     padding-top: 110px
@@ -141,7 +142,7 @@
 }
 
 .arrow-title {
-  color: white; 
+  color: white;
   padding: 5px 0 35px 10px;
   @include box-sizing(border-box);
   background: $bg-arrow;
@@ -229,7 +230,7 @@ padding: 8px 0 0 0; height: 25px;
   -moz-box-sizing: $value; -webkit-box-sizing: $value; -o-box-sizing: $value; box-sizing: $value;
   behavior: url(/assets/ie-support/Schepp-box-sizing-polyfill/boxsizing.htc);
 
-  /* content-box 
+  /* content-box
     border-box */
 }
 
@@ -245,6 +246,7 @@ padding: 8px 0 0 0; height: 25px;
 }
 
 // core css3 animations
+$easeOut: cubic-bezier(.99, .01, -.01, 1.01);
 $easeInBack: cubic-bezier(0.600, -0.280, 0.735, 0.045);
 $easeInCirc: cubic-bezier(0.600, 0.040, 0.980, 0.335);
 $easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
@@ -257,5 +259,3 @@ $easeInOutQuad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
 $easeInOutQuart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
 $easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000);
 $easeInOutSine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
-
-

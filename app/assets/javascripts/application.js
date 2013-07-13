@@ -25,4 +25,13 @@ $(document).ready(function() {
   autocompletar = $('.ui-autocomplete');
 
   autocompletar.appendTo(search_wrapper);
+
+  // Submenu stuff
+  function removeborder() { $('.main-menu').css('border-bottom', '0'); }
+  function addborder() { $('.main-menu').css("border-bottom", "10px solid #FF8800"); }
+
+  $('.arbol-productos a').delay(1200).queue(function(next){
+    next();
+    $(this).hover(removeborder, addborder);
+  });
 });
