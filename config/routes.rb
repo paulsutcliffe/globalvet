@@ -1,5 +1,7 @@
 Globalvet::Application.routes.draw do
 
+  mount Soulmate::Server, :at => "/sm"
+
   get "productos/autocompletar_nombre_de_producto"
 
   match "/resultado_de_busqueda" => "productos#resultado_de_busqueda", via: :get
