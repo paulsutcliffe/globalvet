@@ -4,6 +4,8 @@ Globalvet::Application.routes.draw do
 
   match "/resultado_de_busqueda" => "productos#resultado_de_busqueda", via: :get
 
+  mount Soulmate::Server, :at => '/sm'
+
   get "productos/sin_resultados"
 
   devise_for :admins, :path => "cms", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }

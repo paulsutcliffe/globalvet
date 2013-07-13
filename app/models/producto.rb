@@ -10,11 +10,7 @@ class Producto < ActiveRecord::Base
   mount_uploader :archivo_pdf, PdfUploader
 
   after_save :load_into_soulmate
-
-  def load_into_soulmate
-    loader = Soulmate::Loader.new("producto")
-    loader.add("term" => nombre, "id" => id)
-  end
+  before_destroy :remove_from_soulmate
 
   def self.search(term)
     matches = Soulmate::Matcher.new('producto').matches_for_term(term)
@@ -25,4 +21,17 @@ class Producto < ActiveRecord::Base
     search_condition = "%" + busqueda + "%"
     find(:all, :conditions => ['nombre LIKE ? OR descripcion LIKE ?', search_condition, search_condition])
   end
+
+  private
+
+  def load_into_soulmate
+    loader = Soulmate::Loader.new("producto")
+    loader.add("term" => nombre, "id" => id)
+  end
+
+  def remove_from_soulmate
+    loader = Soulmate::Loader.new("producto")
+    loader.remove("id" => self.id)
+  end
+
 end
