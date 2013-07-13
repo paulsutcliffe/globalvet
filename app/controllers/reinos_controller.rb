@@ -5,9 +5,9 @@ class ReinosController < InheritedResources::Base
     create! { categorias_reino_path(@reino) }
   end
 
-  #def update
-  #  update!(notice: "categoria actualizado exitosamente") { categoria_reinos_path(@categoria) }
-  #end
+  def update
+    update! { categorias_reino_path(@reino) }
+  end
 
 
   def new
