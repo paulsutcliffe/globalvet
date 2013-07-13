@@ -8,7 +8,7 @@
       = link_to 'Nueva Categoria', new_reino_categoria_path(@reino), class: 'button-create'
 
   .content.presentacion
-    = image_tag('/assets/imagen_categoria.jpg')
+    = image_tag @reino.imagen_url(:vertical) if @reino.imagen?
     - @categorias.each do |categoria|
 
       .textual-content
@@ -20,7 +20,6 @@
             = link_to 'Eliminar', reino_categoria_path(@reino), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
 
   - if current_admin
-    %br
     .content.presentacion
 
     %h3.heading
