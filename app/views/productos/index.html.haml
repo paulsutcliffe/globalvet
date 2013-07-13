@@ -15,7 +15,7 @@
         %h3.heading
           = link_to producto.nombre, reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, producto)
 
-        = paragraph(producto.descripcion)
+        = paragraph_truncate(producto.descripcion, 80)
         - if current_admin
           .admin-iterate
             = link_to 'Editar', edit_reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, producto), class: 'button-update'
