@@ -143,6 +143,9 @@ form {margin: 0}
 }
 .content {width: 100%; float: left; clear: left; padding-top: $separation; background: $bg-border-top;}
 
+#myCarousel,
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {width: 870px}
+
 #home {
   .button.read-more {float: right; margin-top: 50px}
   .content {
