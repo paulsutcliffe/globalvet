@@ -130,6 +130,13 @@ form {margin: 0}
   }
 }
 
+.cms-admin {
+  color: white;
+  @include absolute(top, right, 0, 0);
+
+  a {float: right; margin-top: 5px}
+}
+
 
 .carousel {
   float: left; margin: 0; border-bottom: 10px solid $gold; @extend .forzar-pegado;

@@ -37,6 +37,14 @@
             %h2.slogan
               Contamos con la experiencia y tecnolog&iacute;a para lograr los mejores resultados
             = render 'layouts/search'
+
+            - if current_admin
+              .cms-admin
+                Administrador 
+                |
+                = current_admin.email
+                %br
+                = link_to image_tag('btn-logout.png'), destroy_admin_session_path, method: :delete
           .header-components.region-inner
             %nav.main-menu
               %h6.element-invisible
