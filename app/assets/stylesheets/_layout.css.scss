@@ -5,6 +5,17 @@ a:hover { text-decoration: none; }
 .heading {@extend .font-large-x; color: $red; padding-bottom: $separation;
   a {color: $red}}
 
+
+.product-page.logged-in .heading {padding-bottom: 0}
+.product-page.logged-in .admin-iterate {padding-bottom: 20px}
+
+.cat-wrapper {width: 100%; float: left; clear: left;
+  form {width: 100%; float: left; clear: left;}
+  .cat-field {padding: 5px 0; border-bottom: 1px solid #ddd; input {margin-right: 5px}}
+  input, select {float: left; clear: left; margin-top: 5px}
+  h3.heading {margin-top: 15px; float: left; clear: left}
+}
+
 .title,
 .title a {@extend .title-1}
 .page-title {@include absolute(left, top, 0px, 0);

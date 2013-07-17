@@ -28,13 +28,13 @@ class ApplicationController < ActionController::Base
       @product = ''
     end
 
- #   if current_admin
- #     @admin = 'logged-in'
- #   else
- #     @admin = 'not-logged-in'
- #   end
+    if current_admin
+      @admin = 'logged-in'
+    else
+      @admin = 'not-logged-in'
+    end
 
-    @bodyclass = @action + ' ' + @front + ' ' + @product #+ ' ' + @admin
+    @bodyclass = @action + ' ' + @front + ' ' + @product + ' ' + @admin
   end
 
   helper_method :bodyid

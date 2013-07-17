@@ -9,9 +9,9 @@
 
   .content.presentacion
     = image_tag @reino.imagen_url(:vertical) if @reino.imagen?
-    - @categorias.each do |categoria|
 
-      .textual-content
+    .textual-content
+      - @categorias.each do |categoria|
         %h3.heading
           = link_to categoria.nombre, reino_categoria_subcategorias_path(@reino, categoria)
         - if current_admin
@@ -20,23 +20,23 @@
             = link_to 'Eliminar', reino_categoria_path(@reino), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
 
   - if current_admin
-    .content.presentacion
 
-    %h3.heading
-      = 'Categorias de ' + @reino.nombre
+    .cat-wrapper
+      %h3.heading
+        = 'Categorias de ' + @reino.nombre
 
-    .content.presentacion
-    - if @categorias.length > 0
-      = form_tag(reino_eliminar_categoria_path(@reino)) do
-        - for categoria in @categorias do
-          = categoria.nombre
-          = check_box_tag 'categorias[]', categoria.id
-        = submit_tag 'Eliminar categorias'
-    - else
-      No pertenece a ninguna categoría aún.
+      - if @categorias.length > 0
+        = form_tag(reino_eliminar_categoria_path(@reino)) do
+          - for categoria in @categorias do
+            .cat-field
+              = categoria.nombre
+              = check_box_tag 'categorias[]', categoria.id
+          = submit_tag 'Eliminar categorias'
+      - else
+        No pertenece a ninguna categoría aún.
 
-    - if @reino.categorias.count < Categoria.count then
-      %h2 Agrega a categoria
-      = form_tag(reino_agregar_categoria_path(@reino)) do
-        = select_tag(:categoria, options_from_collection_for_select(@reino.categorias_no_agregadas, :id, :nombre))
-        = submit_tag 'Agregar'
+      - if @reino.categorias.count < Categoria.count then
+        %h3.heading Agrega a categoria
+        = form_tag(reino_agregar_categoria_path(@reino)) do
+          = select_tag(:categoria, options_from_collection_for_select(@reino.categorias_no_agregadas, :id, :nombre))
+          = submit_tag 'Agregar'
