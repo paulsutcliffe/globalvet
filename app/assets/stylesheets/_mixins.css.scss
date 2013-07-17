@@ -40,11 +40,11 @@
     }
 
     &.submenu.nivel-1 {
-      width: 100%; height: 25px; text-align: center; background: $tree;
+      width: 100%; height: 25px; height: auto; line-height: 140%; text-align: center; background: $tree;
       li {
-        @include inline-block; line-height: 5px; width: auto; position: relative;
-        span {color: $red; line-height: 5px;}
-        a, span {height: 25px; padding-left: 25px; padding-right: 25px; background: none}
+        @include inline-block; width: auto; position: relative;
+        span {color: $red;}
+        a, span {height: auto; padding: 5px 25px; margin: 0; font-size: 15px; background: none; line-height: 110%}
         @include submenu-nivel-2;
         // @include submenu_hover;
       }
@@ -57,9 +57,9 @@
 @mixin submenu-nivel-2 {
   ul {width: 180px; background: none;
     li {position: relative; width: 100%;
-      a, span {text-transform: capitalize; text-align: left; padding-left: 12px; padding-right: 12px; background-color:rgba(255,178,0,0.75);}
-      a {background-color:rgba(255,178,0,0.75);
-        &:hover {background-color:rgba(195,44,1,0.75)}
+      a, span {text-transform: capitalize; text-align: left; padding: 10px 12px 8px; background: $bg-submenu;}
+      a {background: $bg-submenu;
+        &:hover {background: $bg-submenu-on}
       }
         @include submenu-nivel-3;
 
@@ -70,6 +70,10 @@
 @mixin submenu-nivel-3 {
   ul {width: 180px; top: auto; left: 100%;
   }
+}
+
+.comp {
+  height: auto;
 }
 
 @mixin icons {

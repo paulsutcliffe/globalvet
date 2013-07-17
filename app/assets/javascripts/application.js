@@ -27,7 +27,7 @@ $(document).ready(function() {
   autocompletar.appendTo(search_wrapper);
 
   // Submenu stuff
-  var canHide;
+/*  var canHide;
   function removeborder() {
     setTimeout(function(){
       $('.main-menu').css('border-bottom', '0'); canHide = false;  }, 200);
@@ -39,5 +39,5 @@ $(document).ready(function() {
       }, 2500);
   }
 
-  $('.arbol-productos a').hover(removeborder, reseting);
+  $('.arbol-productos a').hover(removeborder, reseting); */
 });

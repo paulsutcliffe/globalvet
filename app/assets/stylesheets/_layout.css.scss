@@ -17,8 +17,10 @@ p {@extend .paragraph-1}
 
 form {margin: 0}
 
+
+.borde-falso {background: $gold; @include absolute(top, left, 40px, 0); height: 10px; width: 100%; z-index: 20}
 .main-menu {
-  float: left; border-bottom: 10px solid $gold;
+  float: left; position: relative; z-index: 30;/*border-bottom: 10px solid $gold;*/
   ul {margin: 0; float: left; position: relative;
     li {
       float: left; list-style: none; background: $bg-menu-bevel; padding-right: 2px;
@@ -108,8 +110,9 @@ form {margin: 0}
   }
 }
 
+.front #content{margin-top: 10px;}
 #content {z-index: 40;
-  background: $bg-red;
+  background: $bg-red; 
   padding-bottom: 5px;
   .region-inner {
     background: white;
@@ -127,6 +130,7 @@ form {margin: 0}
    header {
     b {color: $red}
    }
+    min-height: 420px;
   }
 }
 
