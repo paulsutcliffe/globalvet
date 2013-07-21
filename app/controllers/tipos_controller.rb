@@ -6,6 +6,7 @@ class TiposController < InheritedResources::Base
     @categoria = Categoria.find(params[:categoria_id])
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
     @tipos = Tipo.where("subcategoria_id = ?", @subcategoria.id)
+    @productos = Producto.where("subcategoria_id = ?", @subcategoria.id)
   end
 
   def new
@@ -13,6 +14,17 @@ class TiposController < InheritedResources::Base
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
     @categoria = Categoria.find(params[:categoria_id])
     @reino = Reino.find(params[:reino_id])
+  end
+
+  def edit
+    @tipo = Tipo.find(params[:id])
+    @subcategoria = Subcategoria.find(params[:subcategoria_id])
+    @categoria = Categoria.find(params[:categoria_id])
+    @reino = Reino.find(params[:reino_id])
+  end
+
+  def update
+    update! { reino_categoria_subcategoria_tipos_path(params[:reino_id], params[:categoria_id], params[:subcategoria_id])}
   end
 
   def create

@@ -13,6 +13,16 @@ class SubcategoriasController < InheritedResources::Base
     @reino = Reino.find(params[:reino_id])
   end
 
+  def edit
+    @subcategoria = Subcategoria.find(params[:id])
+    @reino = Reino.find(params[:reino_id])
+    @categoria = Categoria.find(params[:categoria_id])
+  end
+
+  def update
+    update! { reino_categoria_subcategorias_path(params[:reino_id], params[:categoria_id])}
+  end
+
   def create
     @subcategoria = Subcategoria.new(params[:subcategoria])
     @reino = Reino.find(params[:reino_id])

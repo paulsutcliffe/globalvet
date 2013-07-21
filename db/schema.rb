@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130716072146) do
+ActiveRecord::Schema.define(:version => 20130720065859) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -92,8 +92,9 @@ ActiveRecord::Schema.define(:version => 20130716072146) do
     t.string   "slug"
     t.integer  "tipo_id"
     t.integer  "reino_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "subcategoria_id"
   end
 
   add_index "productos", ["slug"], :name => "index_productos_on_slug", :unique => true

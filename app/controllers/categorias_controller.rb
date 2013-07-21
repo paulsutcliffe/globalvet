@@ -4,9 +4,10 @@ class CategoriasController < InheritedResources::Base
   def create
     create! { reino_categorias_path(params[:reino_id]) }
   end
-  #def update
-  #  update!(notice: "Categoria actualizada exitosamente") { reino_categoria_subcategorias_path(@categoria.reino, @categoria) }
-  #end
+
+  def update
+    update! { reino_categorias_path(params[:reino_id]) }
+  end
 
   def new
     @categoria = Categoria.new
@@ -15,7 +16,7 @@ class CategoriasController < InheritedResources::Base
 
   def edit
     @categoria = Categoria.find(params[:id])
-    @reinos = Reino.all
+    @reino = Reino.find(params[:reino_id])
   end
 
   def reinos

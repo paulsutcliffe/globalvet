@@ -11,15 +11,15 @@ class ProductosController < InheritedResources::Base
 
   def new
     @producto = Producto.new
-    @tipo = Tipo.find(params[:tipo_id])
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
+    @tipo = Tipo.find(params[:tipo_id]) unless params[:tipo_id] == nil
     @categoria = Categoria.find(params[:categoria_id])
     @reino = Reino.find(params[:reino_id])
   end
 
   def edit
     @producto = Producto.find(params[:id])
-    @tipo = Tipo.find(params[:tipo_id])
+    @tipo = Tipo.find(params[:tipo_id]) unless params[:tipo_id] == nil
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
     @categoria = Categoria.find(params[:categoria_id])
     @reino = Reino.find(params[:reino_id])
@@ -27,11 +27,22 @@ class ProductosController < InheritedResources::Base
 
   def update
     @producto = Producto.find(params[:id])
-    @tipo = Tipo.find(params[:tipo_id])
+    @tipo = Tipo.find(params[:tipo_id]) unless params[:tipo_id] == nil
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
     @categoria = Categoria.find(params[:categoria_id])
     @reino = Reino.find(params[:reino_id])
-    update! { reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @producto) }
+    #@producto.subcategoria_id = @subcategoria.id
+    #@producto.reino_id = @reino.id
+    if params[:tipo_id] == nil
+      update! { reino_categoria_subcategoria_tipos_path(@reino, @categoria, @subcategoria)}
+    else
+      @producto.tipo_id = @tipo.id
+      update! { reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, @tipo)}
+    end
+
+
+
+    #update! { reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @producto) }
   end
 
   def create
@@ -39,10 +50,15 @@ class ProductosController < InheritedResources::Base
     @reino = Reino.find(params[:reino_id])
     @categoria = Categoria.find(params[:categoria_id])
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
-    @tipo = Tipo.find(params[:tipo_id])
-    @producto.tipo_id = @tipo.id
+    @tipo = Tipo.find(params[:tipo_id]) unless params[:tipo_id] == nil
+    @producto.subcategoria_id = @subcategoria.id
     @producto.reino_id = @reino.id
-    create! { reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, @tipo)}
+    if params[:tipo_id] == nil
+      create! { reino_categoria_subcategoria_tipos_path(@reino, @categoria, @subcategoria)}
+    else
+      @producto.tipo_id = @tipo.id
+      create! { reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, @tipo)}
+    end
   end
 
   def show
@@ -50,7 +66,7 @@ class ProductosController < InheritedResources::Base
     @reino = Reino.find(params[:reino_id])
     @categoria = Categoria.find(params[:categoria_id])
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
-    @tipo = Tipo.find(params[:tipo_id])
+    @tipo = Tipo.find(params[:tipo_id]) unless params[:tipo_id] == nil
   end
 
   def autocompletar_nombre_de_producto

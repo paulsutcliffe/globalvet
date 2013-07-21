@@ -1,10 +1,12 @@
 class Producto < ActiveRecord::Base
-  attr_accessible :archivo_pdf, :descripcion, :nombre, :imagen, :slug
+  attr_accessible :archivo_pdf, :descripcion, :nombre, :imagen, :slug, :reino_id, :categoria_id, :subcategoria_id, :tipo_id
+
   extend FriendlyId
   friendly_id :nombre, use: :slugged
 
   belongs_to :tipo
   belongs_to :reino
+  belongs_to :subcategoria
 
   mount_uploader :imagen, ImagenUploader
   mount_uploader :archivo_pdf, PdfUploader

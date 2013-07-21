@@ -1,7 +1,10 @@
 #page-content
 
   %h3.heading
-    = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @tipo.nombre + ' > ' + @producto.nombre
+    - if @tipo
+      = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @tipo.nombre + ' > ' + @producto.nombre
+    - else
+      = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @producto.nombre
 
   .content.presentacion
     = image_tag @producto.imagen_url(:vertical) if @producto.imagen?
@@ -15,5 +18,9 @@
       = link_to @producto.archivo_pdf_url, @producto.archivo_pdf_url, class: 'button-pdf'
       - if current_admin
         .admin-iterate
-          = link_to 'Editar', edit_reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @producto), class: 'button-update'
-          = link_to 'Eliminar', reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @producto), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
+          - if @tipo
+            = link_to 'Editar', edit_reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @producto), class: 'button-update'
+            = link_to 'Eliminar', reino_categoria_subcategoria_tipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @producto), :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'button-delete'
+          - else
+            = link_to 'Editar', edit_reino_categoria_subcategoria_producto_path(@reino, @categoria, @subcategoria, @producto), class: 'button-update'
+            = link_to 'Eliminar', reino_categoria_subcategoria_producto_path(@reino, @categoria, @subcategoria, @producto), :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'button-delete'
