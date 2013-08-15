@@ -1,0 +1,8 @@
+#page-content
+  %h1.page-title
+    = page_title! 'Editanto subtipo'
+
+  .content
+    = render 'form'
+
+    = link_to 'Regresar', reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, @tipo), class: 'button-back-cms'

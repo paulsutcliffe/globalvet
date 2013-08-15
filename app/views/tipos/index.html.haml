@@ -14,7 +14,7 @@
 
       .textual-content
         %h3.heading
-          = link_to tipo.nombre, reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, tipo)
+          = link_to tipo.nombre, reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, tipo)
 
         - if current_admin
           .admin-iterate

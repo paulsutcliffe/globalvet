@@ -6,7 +6,7 @@ class TiposController < InheritedResources::Base
     @categoria = Categoria.find(params[:categoria_id])
     @subcategoria = Subcategoria.find(params[:subcategoria_id])
     @tipos = Tipo.where("subcategoria_id = ?", @subcategoria.id)
-    @productos = Producto.where("subcategoria_id = ?", @subcategoria.id)
+    @productos = Producto.where("reino_id = ? AND subcategoria_id = ? AND tipo_id IS NULL AND subtipo_id IS NULL", @reino.id, @subcategoria.id)
   end
 
   def new

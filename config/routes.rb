@@ -26,6 +26,9 @@ Globalvet::Application.routes.draw do
       resources :subcategorias do
         resources :productos
         resources :tipos do
+          resources :subtipos do
+            resources :productos
+          end
           resources :productos
         end
       end

@@ -28,7 +28,7 @@
 
                     - unless @subcategorias_tree.empty?
                       %ul.submenu.nivel-3
-                        - @subcategorias_tree.select { |sub| sub.categoria_id == categoria_tree.id }.each do |subcategoria_tree|
+                        - @subcategorias_tree.select { |sub| sub.categoria_id == categoria_tree.id and sub.reino_id == reino_tree.id }.each do |subcategoria_tree|
                           %li
                             = link_to_unless_current subcategoria_tree.nombre, reino_categoria_subcategoria_tipos_path(reino_tree, categoria_tree, subcategoria_tree) do
                               %span= subcategoria_tree.nombre
@@ -39,10 +39,17 @@
                               %ul.submenu.nivel-4
                                 - @tipos_tree.select { |tipo| tipo.subcategoria_id == subcategoria_tree.id }.each do |tipo_tree|
                                   %li
-                                    = link_to_unless_current tipo_tree.nombre, reino_categoria_subcategoria_tipo_productos_path(reino_tree, categoria_tree, subcategoria_tree, tipo_tree) do
+                                    = link_to_unless_current tipo_tree.nombre, reino_categoria_subcategoria_tipo_subtipos_path(reino_tree, categoria_tree, subcategoria_tree, tipo_tree) do
                                       %span= tipo_tree.nombre
 
                                     // end submenu nivel 4
+
+                                    - unless @subtipos_tree.empty?
+                                      %ul.submenu.nivel-4
+                                        - @subtipos_tree.select { |subtipo| subtipo.tipo_id == tipo_tree.id }.each do |subtipo_tree|
+                                          %li
+                                            = link_to_unless_current subtipo_tree.nombre, reino_categoria_subcategoria_tipo_subtipo_productos_path(reino_tree, categoria_tree, subcategoria_tree, tipo_tree, subtipo_tree) do
+                                              %span= subtipo_tree.nombre
 
   %li
     = link_to_unless_current 'Representadas', marcas_path do

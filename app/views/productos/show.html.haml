@@ -1,10 +1,13 @@
 #page-content
 
   %h3.heading
-    - if @tipo
-      = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @tipo.nombre + ' > ' + @producto.nombre
+    - if params[:subtipo_id]
+      = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @tipo.nombre + ' > ' + @subtipo.nombre + ' > ' + @producto.nombre
     - else
-      = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @producto.nombre
+      - if params[:tipo_id]
+        = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @tipo.nombre + ' > ' + @producto.nombre
+      - else
+        = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @producto.nombre
 
   .content.presentacion
     = image_tag @producto.imagen_url(:vertical) if @producto.imagen?

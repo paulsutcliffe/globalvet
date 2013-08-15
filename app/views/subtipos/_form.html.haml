@@ -1,0 +1,16 @@
+= form_for [@reino, @categoria, @subcategoria, @tipo, @subtipo], :html => { multipart: true } do |f|
+  - if @subtipo.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@subtipo.errors.count, "error")} prohibited this subtipo from being saved:"
+      %ul
+        - @subtipo.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :nombre
+    = f.text_field :nombre
+  .field
+    = f.label :imagen
+    = f.file_field :imagen
+  .actions
+    = f.submit 'Guardar'

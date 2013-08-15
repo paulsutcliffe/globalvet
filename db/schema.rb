@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720065859) do
+ActiveRecord::Schema.define(:version => 20130813023333) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20130720065859) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "subcategoria_id"
+    t.integer  "subtipo_id"
   end
 
   add_index "productos", ["slug"], :name => "index_productos_on_slug", :unique => true
@@ -120,6 +121,17 @@ ActiveRecord::Schema.define(:version => 20130720065859) do
   end
 
   add_index "subcategorias", ["slug"], :name => "index_subcategorias_on_slug", :unique => true
+
+  create_table "subtipos", :force => true do |t|
+    t.string   "nombre"
+    t.string   "imagen"
+    t.integer  "tipo_id"
+    t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "subtipos", ["slug"], :name => "index_subtipos_on_slug", :unique => true
 
   create_table "tipos", :force => true do |t|
     t.string   "nombre"
