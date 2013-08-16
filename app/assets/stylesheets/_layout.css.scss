@@ -300,7 +300,7 @@ body[id^="devise"] {
 .button-readmore {@extend .btn; @extend .btn-default; @extend .boton-rojo}
 .button-back {@extend .btn; @extend .btn-default; @extend .boton-rojo}
 .button-back-cms {@extend .btn; @extend .btn-default; @extend .btn-inverse; margin-top: 20px}
-.button-pdf {background: $pdf-icon; @include size(38px, 37px); display: block; text-indent: -9999px}
+.button-pdf {background: $pdf-icon; @include size(38px, 37px); @include inline-block; text-indent: -9999px}
 .link-more {@include absolute(bottom, left, 17px, 210px)}
 
 /*
@@ -320,3 +320,10 @@ font-size: 12px}
 
 .edit-image {float: left; margin-right: 20px}
 .edit form {overflow: hidden}
+
+
+.btn-download-pdf {
+  .pdf-label {
+    margin-top: 5px; @include inline-block;
+  }
+}

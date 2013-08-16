@@ -9,9 +9,9 @@
 
   .content.presentacion
     = image_tag @categoria.imagen_url(:vertical) if @categoria.imagen?
-    - @subcategorias.each do |subcategoria|
 
-      .textual-content
+    .textual-content
+      - @subcategorias.each do |subcategoria|
         %h3.heading
           = link_to subcategoria.nombre, reino_categoria_subcategoria_tipos_path(@reino, @categoria, subcategoria)
         - if current_admin

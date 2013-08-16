@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
       @front = 'not-front'
     end
 
-    if params[:controller] == 'reinos' || params[:controller] == 'categorias' || params[:controller] == 'subcategorias' || params[:controller]  == 'tipos' || params[:controller] == 'productos'
+    if params[:controller] == 'reinos' || params[:controller] == 'categorias' || params[:controller] == 'subcategorias' || params[:controller]  == 'tipos' || params[:controller] == 'productos' || params[:controller] == 'subtipos'
       @product = 'product-page'
     else
       @product = ''

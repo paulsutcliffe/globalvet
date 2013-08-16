@@ -12,9 +12,8 @@
 
   .content.presentacion
     = image_tag @tipo.imagen_url(:vertical) if @tipo.imagen?
-    - @productos.each do |producto|
-
-      .textual-content
+    .textual-content
+      - @productos.each do |producto|
         %h3.heading
           = link_to producto.nombre, reino_categoria_subcategoria_tipo_subtipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @subtipo, producto)
 
