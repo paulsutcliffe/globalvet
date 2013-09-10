@@ -10,9 +10,8 @@
 
   .content.presentacion
     = image_tag @subcategoria.imagen_url(:vertical) if @subcategoria.imagen?
-    - @tipos.each do |tipo|
-
-      .textual-content
+    .textual-content
+      - @tipos.each do |tipo|
         %h3.heading
           = link_to tipo.nombre, reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, tipo)
 
@@ -21,9 +20,9 @@
             = link_to 'Editar', edit_reino_categoria_subcategoria_tipo_path(@reino, @categoria, @subcategoria, tipo), class: 'button-update'
             = link_to 'Eliminar', reino_categoria_subcategoria_tipo_path(@reino, @categoria, @subcategoria, tipo), :method => :delete, :data => { :confirm => '¿Estás seguro?' }, class: 'button-delete'
 
-    - @productos.each do |producto|
 
-      .textual-content
+    .textual-content
+      - @productos.each do |producto|
         %h3.heading
           = link_to producto.nombre, reino_categoria_subcategoria_producto_path(@reino, @categoria, @subcategoria, producto)
 

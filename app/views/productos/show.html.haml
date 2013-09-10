@@ -17,8 +17,10 @@
         = @producto.nombre
 
       = paragraph(@producto.descripcion)
-      Descargar PDF
-      = link_to @producto.archivo_pdf_url, @producto.archivo_pdf_url, class: 'button-pdf'
+      .btn-download-pdf
+        .pdf-label
+          Descargar PDF
+        = link_to @producto.archivo_pdf_url, @producto.archivo_pdf_url, class: 'button-pdf'
       - if current_admin
         .admin-iterate
           - if @tipo
