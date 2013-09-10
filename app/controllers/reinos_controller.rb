@@ -9,6 +9,9 @@ class ReinosController < InheritedResources::Base
     update! { categorias_reino_path(@reino) }
   end
 
+  def index
+    @reinos = Reino.order("indice ASC")
+  end
 
   def new
     @reino = Reino.new
