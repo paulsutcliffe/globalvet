@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130813023333) do
+ActiveRecord::Schema.define(:version => 20130909202550) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20130813023333) do
     t.string   "slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "indice"
   end
 
   add_index "reinos", ["slug"], :name => "index_reinos_on_slug", :unique => true

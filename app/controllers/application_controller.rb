@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :load_products_tree
 
   def load_products_tree
-    @reinos_tree = Reino.select("id, nombre, slug").all
+    @reinos_tree = Reino.select("id, nombre, slug").order("indice ASC")
     @subcategorias_tree = Subcategoria.select("id, nombre, slug, categoria_id, reino_id").all
     @tipos_tree = Tipo.select("id, nombre, slug, subcategoria_id").all
     @subtipos_tree = Subtipo.select("id, nombre, slug, tipo_id").all

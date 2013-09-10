@@ -1,5 +1,5 @@
 class Reino < ActiveRecord::Base
-  attr_accessible :imagen, :nombre, :slug
+  attr_accessible :imagen, :nombre, :slug, :indice
   extend FriendlyId
   friendly_id :nombre, use: :slugged
 
