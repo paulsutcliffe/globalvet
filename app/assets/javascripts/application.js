@@ -40,4 +40,13 @@ $(document).ready(function() {
   }
 
   $('.arbol-productos a').hover(removeborder, reseting); */
+
+
+   $('<a class="button-back-cms back-js">Regresar</a>').insertAfter('.product-page .content');
+
+   $('.back-js').click(function(){
+     window.history.back();
+   })
+
+
 });

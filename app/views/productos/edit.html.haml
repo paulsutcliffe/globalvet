@@ -8,5 +8,3 @@
     .edit-image
       = image_tag @producto.imagen_url(:vertical) if @producto.imagen?
     = render 'form'
-
-    = link_to 'Regresar', :back, class: 'button-back-cms'
