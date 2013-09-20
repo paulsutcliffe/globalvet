@@ -14,7 +14,8 @@
           = link_to image_tag(noticia.imagen_url(:thumb)), noticia
           .textual-content
             %h3.title= noticia.titulo
-            = paragraph_truncate(noticia.contenido, 200)
+            = paragraph_truncate(noticia.contenido, 100)
+            = l noticia.created_at, :format => :month
             - if current_admin
               .admin-iterate
                 = link_to 'Editar', edit_noticia_path(noticia), class: 'button-update'
@@ -25,6 +26,8 @@
           = link_to image_tag(noticia.imagen_url(:thumb)), noticia.link, target: '_blank'
           .textual-content
             %h3.title= noticia.titulo
+            = paragraph_truncate(noticia.contenido, 100)
+            = l noticia.created_at, :format => :month
             - if current_admin
               .admin-iterate
                 = link_to 'Editar', edit_noticia_path(noticia), class: 'button-update'

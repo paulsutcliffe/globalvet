@@ -177,6 +177,7 @@ es:
       default: ! '%a, %d de %b del %Y a las %H:%M:%S %Z'
       long: ! '%A, %d de %B del %Y a las %I:%M %p'
       short: ! '%d de %b a las %H:%M hrs'
+      month: ! '%d de %B del %Y'
     pm: pm
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:

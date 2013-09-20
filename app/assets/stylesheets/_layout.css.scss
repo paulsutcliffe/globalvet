@@ -2,11 +2,11 @@ body {font-family: $comfortaa; background: $red; overflow-y: scroll}
 #site-wrapper {background: $bg-fondo; -pie-background: $bg-fondo-pie; @include css3pie; position: relative; z-index: 60}
 h1, h2, h3, h4, h5, h6 {line-height: 100%; @extend .font-comfortaa-3; margin: 0}
 a:hover { text-decoration: none; }
-.heading {@extend .font-large-x; color: $red; padding-bottom: $separation;
+.heading {@extend .font-large; color: $red; padding-bottom: $separation;
   a {color: $red}}
 
 
-.product-page.logged-in .heading {padding-bottom: 0}
+.product-page.logged-in .heading { @extend .font-comfortaa-7; padding-bottom: 0}
 .product-page.logged-in .admin-iterate {padding-bottom: 20px}
 
 .cat-wrapper {width: 100%; float: left; clear: left;
@@ -123,7 +123,7 @@ form {margin: 0}
 
 .front #content{margin-top: 10px;}
 #content {z-index: 40;
-  background: $bg-red; 
+  background: $bg-red;
   padding-bottom: 5px;
   .region-inner {
     background: white;
@@ -208,7 +208,7 @@ form {margin: 0}
   float: left; clear: left; width: 100%; padding: 30px 0 20px;
   img {float: left; margin-right: 10px}
   h3.title {
-    @extend .font-large;
+    @extend .font-large; line-height: 100%;
   }
   .textual-content {overflow: hidden}
   &:nth-of-type(1) {padding-top: 0}
