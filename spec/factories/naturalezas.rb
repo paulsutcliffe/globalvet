@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :naturaleza do
+    categoria_id 1
+    reino_id 1
   end
 end
