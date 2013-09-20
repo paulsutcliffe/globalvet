@@ -1,9 +1,10 @@
+# coding: utf-8
 require 'faker'
 
 FactoryGirl.define do
   factory :noticia do
-    titulo { Faker::Lorem.sentence(word_count = 4, supplemental = false) }
-    contenido { Faker::Lorem.paragraphs(paragraph_count = 3, supplemental = false) }
+    titulo "Estuvimos en AMEVEA 2013"
+    contenido "VII Seminario Internacional AMEVEA – V Encuentro Científico – V Expo Amevea – Perú 2013, Del 26 al 28 de Junio del 2013, conferencistas internacionales. La sede del congreso será en el HOTEL SHERATON."
     imagen { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'images', 'imagen_categoria.jpg')) }
   end
 end
