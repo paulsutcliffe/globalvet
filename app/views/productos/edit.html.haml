@@ -9,7 +9,4 @@
       = image_tag @producto.imagen_url(:vertical) if @producto.imagen?
     = render 'form'
 
-    - if @tipo
-      = link_to 'Regresar', reino_categoria_subcategoria_tipo_productos_path(@reino, @categoria, @subcategoria, @tipo), class: 'button-back-cms'
-    - else
-      = link_to 'Regresar', reino_categoria_subcategoria_productos_path(@reino, @categoria, @subcategoria), class: 'button-back-cms'
+    = link_to 'Regresar', :back, class: 'button-back-cms'

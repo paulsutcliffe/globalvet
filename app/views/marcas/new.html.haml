@@ -1,10 +1,8 @@
 #page-content
   %h1.page-title
     = page_title! 'Nueva marca'
-    
+
   .content
     = render 'form'
 
-    = link_to 'Regresar', marcas_path, class: 'button-back-cms'
-
-
+    = link_to 'Regresar', :back, class: 'button-back-cms'
