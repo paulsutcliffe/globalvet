@@ -1,5 +1,5 @@
 class Reino < ActiveRecord::Base
-  attr_accessible :imagen, :nombre, :slug, :indice
+  attr_accessible :imagen, :nombre, :slug, :indice, :icono
   extend FriendlyId
   friendly_id :nombre, use: :slugged
 
@@ -9,6 +9,7 @@ class Reino < ActiveRecord::Base
   has_many :productos
 
   mount_uploader :imagen, ImagenUploader
+  mount_uploader :icono, IconoUploader
 
   def agregado_en?(categoria)
     self.categorias.include?(categoria)

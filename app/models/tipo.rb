@@ -7,4 +7,5 @@ class Tipo < ActiveRecord::Base
   belongs_to :subcategoria
 
   mount_uploader :imagen, ImagenUploader
+
 end
