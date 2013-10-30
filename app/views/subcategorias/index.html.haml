@@ -1,6 +1,7 @@
 #page-content
 
   %h3.heading
+    = image_tag @reino.icono_url(:thumb)
     = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > Subcategorias'
 
   - if current_admin
