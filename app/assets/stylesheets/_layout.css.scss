@@ -344,6 +344,17 @@ font-size: 12px}
 
     }
 }
+#reinos .presentacion:after {display: none}
+.animales-index {position: relative; width: 900px; max-width: 900px; left: -52px}
 
 #page-content > .heading {font-size: 22px !important}
 .button-back-cms {float: right}
+.animal-list {
+  margin: 0; position: relative; left: 0px; width: 900px;
+  li {
+    float: left;  list-style: none; margin-right: 75px;
+    a {color: $red; font-size: 16px; text-transform: uppercase; font-weight: bold}
+  }
+}
+
+#reinos.index .content {background: none; padding-top: 120px}

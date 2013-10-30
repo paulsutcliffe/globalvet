@@ -1,6 +1,6 @@
 #page-content
 
-  %h3.heading
+  %h1.page-title
     = page_title! 'Productos'
 
   - if current_admin
@@ -8,9 +8,24 @@
       = link_to 'Nuevo Reino', new_reino_path, class: 'button-create'
 
   .content.presentacion
-    = image_tag('/assets/imagen_categoria.jpg')
+    %ul.animal-list
+      %li
+        = link_to 'Aves', '/'
+      %li
+        = link_to 'Porcinos', '/'
+      %li
+        = link_to 'Bovinos', '/'
+      %li
+        = link_to 'Equinos', '/'
+      %li
+        = link_to 'Mascotas', '/'
+      %li
+        = link_to 'Peces', '/'
 
-    .textual-content
+
+    = image_tag('/assets/productos-index.png', class: 'animales-index')
+
+    .textual-content{:style => 'display: none'}
       - @reinos.each do |reino|
         %h3.heading
           = link_to reino.nombre, categorias_reino_path(reino)
