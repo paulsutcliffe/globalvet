@@ -9,9 +9,9 @@
 
   .content.presentacion
     = image_tag('/assets/imagen_categoria.jpg')
-    - @categorias.each do |categoria|
 
-      .textual-content
+    .textual-content
+      - @categorias.each do |categoria|
         %h3.heading
           = link_to categoria.nombre, categoria
         - if current_admin

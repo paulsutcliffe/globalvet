@@ -1,7 +1,7 @@
 #page-content
 
   %h3.heading
-    = image_tag @reino.icono_url(:thumb)
+    = image_tag @reino.icono_url(:thumb), class: 'head-icon'
     - if params[:subtipo_id]
       = page_title! @reino.nombre + ' > ' + @categoria.nombre + ' > ' + @subcategoria.nombre + ' > ' + @tipo.nombre + ' > ' + @subtipo.nombre + ' > ' + 'Productos'
     - if params[:subtipo_id] == nil and params[:tipo_id]
