@@ -41,6 +41,7 @@ gem "capistrano"
 # To use debugger
 # gem 'debugger'
 
+gem 'unicorn-worker-killer'
 gem "bootstrap-sass", "~> 2.3.1.0", :group => :assets
 gem "rvm-capistrano"
 gem "haml"
