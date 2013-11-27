@@ -15,14 +15,20 @@
       - @tipos.each do |tipo|
         %h3.heading.next-title
           = link_to tipo.nombre, reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, tipo)
-        %p Aditivos y
-        %ul
+        %ul.ul-paragraph
           %li Aditivos y Suplementos Nutricionales - Nutraseúticos 
           %li Aditivos y Suplementos Nutricionales - Nutraseúticos 
           -#
             - tipo.productos.each do |producto|
             = link_to producto.nombre, reino_categoria_subcategoria_tipo_subtipo_producto_path(@reino, @categoria, @subcategoria, tipo, producto)
-            ,
+
+
+      - @tipos.each do |tipo|
+        %h3.heading.next-title
+          = link_to tipo.nombre, reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, tipo)
+        %ul.ul-paragraph
+          %li Aditivos y Suplementos Nutricionales - Nutraseúticos 
+          %li Aditivos y Suplementos Nutricionales - Nutraseúticos 
 
         - if current_admin
           .admin-iterate

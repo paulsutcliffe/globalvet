@@ -24,7 +24,7 @@ background: $page-title; @include size(870px, 90px); padding: 20px 0 0 40px; @in
 @extend .font-title; @extend .font-comfortaa-7; color: $red;
 }
 img {vertical-align: top}
-p {@extend .paragraph-1}
+p, .content li {@extend .paragraph-1}
 
 
 form {margin: 0}
@@ -377,3 +377,5 @@ font-size: 12px}
 .heading.next-title {padding-bottom: 5px}
 
 h1, h2, h3, h4, h5, h6 {font-weight: 300}
+
+.ul-paragraph {margin-left: 0; li {display: inline; padding: 0; list-style: none; }}
