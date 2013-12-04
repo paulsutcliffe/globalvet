@@ -13,6 +13,6 @@
     .textual-content
       = paragraph(@noticia.contenido)
       - unless @noticia.link.empty?
-        = link_to @noticia.link
+        = link_to @noticia.link, @noticia.link, target: '_blank'
 
   = link_to 'Regresar', :back, class: 'button-back-cms'
