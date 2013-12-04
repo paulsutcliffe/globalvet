@@ -15,6 +15,10 @@
       - @categorias.each do |categoria|
         %h3.heading
           = link_to categoria.nombre, reino_categoria_subcategorias_path(@reino, categoria)
+          %p
+            - Subcategoria.where("categoria_id = ?", categoria.id).each do |subcategoria|
+              = subcategoria.nombre
+
         - if current_admin
           .admin-iterate
             = link_to 'Editar', edit_reino_categoria_path(@reino, categoria), class: 'button-update'

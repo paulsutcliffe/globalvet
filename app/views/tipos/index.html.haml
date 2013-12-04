@@ -10,25 +10,21 @@
       = link_to 'Nuevo Producto', new_reino_categoria_subcategoria_producto_path(@reino, @categoria, @subcategoria), class: 'button-create'
 
   .content.presentacion
-    = image_tag @subcategoria.imagen_url(:vertical) if @subcategoria.imagen?
+    = image_tag @reino.imagen_url(:vertical) if @reino.imagen?
     .textual-content
       - @tipos.each do |tipo|
         %h3.heading.next-title
           = link_to tipo.nombre, reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, tipo)
-        %ul.ul-paragraph
-          %li Aditivos y Suplementos Nutricionales - Nutraseúticos 
-          %li Aditivos y Suplementos Nutricionales - Nutraseúticos 
-          -#
+          %p
             - tipo.productos.each do |producto|
-            = link_to producto.nombre, reino_categoria_subcategoria_tipo_subtipo_producto_path(@reino, @categoria, @subcategoria, tipo, producto)
-
+              = producto.nombre
 
       - @tipos.each do |tipo|
         %h3.heading.next-title
           = link_to tipo.nombre, reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, tipo)
-        %ul.ul-paragraph
-          %li Aditivos y Suplementos Nutricionales - Nutraseúticos 
-          %li Aditivos y Suplementos Nutricionales - Nutraseúticos 
+          %p
+            - tipo.productos.each do |producto|
+              = producto.nombre
 
         - if current_admin
           .admin-iterate

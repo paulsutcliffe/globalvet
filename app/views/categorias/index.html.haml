@@ -14,6 +14,7 @@
       - @categorias.each do |categoria|
         %h3.heading
           = link_to categoria.nombre, categoria
+
         - if current_admin
           .admin-iterate
             = link_to 'Editar', edit_categoria_path(categoria)
