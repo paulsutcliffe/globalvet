@@ -213,10 +213,10 @@ form {margin: 0}
   h3.title {
     @extend .font-large; line-height: 100%;
   }
-  .textual-content {overflow: hidden}
+  .textual-content {overflow: hidden; margin-right: 120px}
   &:nth-of-type(1) {padding-top: 0}
   &:last-child {padding-bottom: 0; background: none}
-  .button-readmore {@include absolute(bottom, right, 20px, 0); width: 100px}
+  .button-readmore-1 {@include absolute(bottom, right, 20px, 20px);}
 }
 
 .presentacion {
@@ -227,6 +227,13 @@ form {margin: 0}
     img {margin-right: 50px}
   }
 }
+
+#noticias.index .content .textual-content p {color: #646363}
+.date-item {font-size: 11px; position: relative; top: -1px; color: #646363}
+#noticias.index .textual-content h3.title {font-weight: bolder}
+
+
+#noticias.index .info.resumen .title {padding-bottom: 0; font-size: 14px; line-height: 120%}
 
 .sin_resultados {
   #page-content {
@@ -243,8 +250,8 @@ form {margin: 0}
 
 
 form {
-  legend {color: $gray; text-transform: uppercase; border-bottom: 0; font-size: $medium; margin: 0; padding-bottom: $separation}
-  input[type="text"], input[type="password"], input[type="email"], textarea, submit, button {@extend .form-element }
+  legend {color: $gray; text-transform: uppercase; border-bottom: 0; font-size: 14px; margin: 0; padding-bottom: 20px}
+  input[type="text"], input[type="password"], input[type="email"], textarea, submit, button {@extend .form-element; margin-bottom: 16px }
   input[type="text"] {@extend .input-style;}
   textarea {@extend .textarea-style; width: 500px; min-width: 500px; max-width: 795px; height: 160px; min-height: 160px}
   button, submit {@extend .button-style}
@@ -253,7 +260,7 @@ form {
   .field {
     label {color: $gray; margin: 5px 0 0 0}
   }
-  .actions {padding-top: 20px}
+  .actions {padding-top: 0px}
 
   #contactos & {
     input[type="text"] {margin-right: 10px}
@@ -383,3 +390,5 @@ h1, h2, h3, h4, h5, h6 {font-weight: 300}
 .ul-paragraph {margin-left: 0; li {display: inline; padding: 0; list-style: none; }}
 
 #quienes_somos #page-content .content {padding-top: 40px}
+
+#noticias.index #page-content {padding-top: 125px}
