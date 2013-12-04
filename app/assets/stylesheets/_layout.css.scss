@@ -42,7 +42,7 @@ form {margin: 0}
         float: left; @include box-sizing(border-box); overflow: hidden;
         @extend .font-pt-7;
         &:hover {
-          background: $bg-menu-on; color: #c42c01; 
+          background: $bg-menu-on; color: #c42c01;
         }
       }
       span {
@@ -347,7 +347,7 @@ font-size: 12px}
 .product-page {
   .presentacion {position: relative;
     &:after {
-    content: url('/assets/cuadro-animal.png'); @include absolute(left, top, -12px, 20px)}
+    content: url('/assets/cuadro-animal.png'); @include absolute(left, top, -12px, 24px)}
 
     img, .textual-content {margin-top: 26px; margin-left: -8px}
 
@@ -355,7 +355,7 @@ font-size: 12px}
   .content {padding-top: 0}
 
 }
-#reinos .presentacion:after {display: none}
+#productos.show .presentacion:after {display: none}
 .animales-index {position: relative; width: 900px; max-width: 900px; left: -52px}
 
 #page-content > .heading {font-size: 22px !important}
@@ -378,8 +378,8 @@ font-size: 12px}
 #quienes_somos .info.mision-vision p {font-weight: 300; line-height: 145%; padding-right: 20px }
 .arrow-title, #quienes_somos .info.mision-vision h3 {padding-left: 30px; font-weight: 300}
 
-.font-large, .heading, .resumen h3.title, 
-.resumen .carousel h3.carousel-caption, 
+.font-large, .heading, .resumen h3.title,
+.resumen .carousel h3.carousel-caption,
 .carousel .resumen h3.carousel-caption {line-height: 160%}
 
 #reinos .heading {padding-bottom: 20px}

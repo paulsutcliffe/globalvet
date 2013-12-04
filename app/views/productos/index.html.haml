@@ -12,7 +12,7 @@
       = link_to 'Nuevo Producto', new_reino_categoria_subcategoria_tipo_subtipo_producto_path(@reino, @categoria, @subcategoria, @tipo, @subtipo), class: 'button-create'
 
   .content.presentacion
-    = image_tag @tipo.imagen_url(:vertical) if @tipo.imagen?
+    = image_tag @reino.imagen_url(:vertical) if @reino.imagen?
     .textual-content
       - @productos.each do |producto|
         %h3.heading

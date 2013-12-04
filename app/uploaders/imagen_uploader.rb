@@ -46,7 +46,7 @@ class ImagenUploader < CarrierWave::Uploader::Base
   end
 
   version :vertical do
-    process :resize_to_fill => [250, 250] 
+    process :resize_to_fill => [260, 338]
   end
 
   version :thumb_busqueda do
