@@ -42,12 +42,11 @@ form {margin: 0}
         float: left; @include box-sizing(border-box); overflow: hidden;
         @extend .font-pt-7;
         &:hover {
-          background: $bg-menu-on;
+          background: $bg-menu-on; color: #c42c01; 
         }
       }
       span {
-          background: $bg-menu-on;
-      }
+          background: $bg-menu-on; color: #c42c01;       }
       &.first a,
       &.first span {width: 105px; @extend .radius-top-left;
         &:before {@include icons;}
@@ -64,6 +63,9 @@ form {margin: 0}
   }
 }
 
+#main-menu > li > span,
+#main-menu > li > a:hover {text-shadow: 1px 1px 0px white;
+}
 .main-menu {
   ul ul {@include display-false; }
     li:hover > a + ul,
@@ -379,3 +381,5 @@ font-size: 12px}
 h1, h2, h3, h4, h5, h6 {font-weight: 300}
 
 .ul-paragraph {margin-left: 0; li {display: inline; padding: 0; list-style: none; }}
+
+#quienes_somos #page-content .content {padding-top: 40px}
