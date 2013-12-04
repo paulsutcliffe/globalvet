@@ -16,7 +16,7 @@
         %h3.heading
           = link_to subcategoria.nombre, reino_categoria_subcategoria_tipos_path(@reino, @categoria, subcategoria)
           %p
-            - subcategoria.tipos.each do |tipo|
+            - Tipo.where("subcategoria_id = ?", subcategoria.id).each do |tipo|
               = tipo.nombre
 
         - if current_admin

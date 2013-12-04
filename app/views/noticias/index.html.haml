@@ -10,32 +10,18 @@
   .content
     - @noticias.each do |noticia|
       .info.resumen
-        - if noticia.link.empty?
-          = link_to image_tag(noticia.imagen_url(:thumb)), noticia
-          .textual-content
-            %h3.title= noticia.titulo
-            = paragraph_truncate(noticia.contenido, 80)
-            %p.date-item
-              = l noticia.created_at, :format => :tiny
-            - if current_admin
-              .admin-iterate
-                = link_to 'Editar', edit_noticia_path(noticia), class: 'button-update'
-                = link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
+        = link_to image_tag(noticia.imagen_url(:thumb)), noticia.link, target: '_blank'
+        .textual-content
+          %h3.title= noticia.titulo
+          = paragraph_truncate(noticia.contenido, 80)
+          %p.date-item
+            = l noticia.created_at, :format => :tiny
+          - if current_admin
+            .admin-iterate
+              = link_to 'Editar', edit_noticia_path(noticia), class: 'button-update'
+              = link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
 
-          = link_to 'Leer más', noticia, class: 'button button-readmore'
-        - else
-          = link_to image_tag(noticia.imagen_url(:thumb)), noticia.link, target: '_blank'
-          .textual-content
-            %h3.title= noticia.titulo
-            = paragraph_truncate(noticia.contenido, 80)
-            %p.date-item
-              = l noticia.created_at, :format => :tiny
-            - if current_admin
-              .admin-iterate
-                = link_to 'Editar', edit_noticia_path(noticia), class: 'button-update'
-                = link_to 'Eliminar', noticia, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'button-delete'
-
-          = link_to image_tag('leer-mas-articulo.png'), noticia.link, class: 'button button-readmore-1', target: '_blank'
+        = link_to image_tag('leer-mas-articulo.png'), noticia, class: 'button button-readmore-1'
 
 
 

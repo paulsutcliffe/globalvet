@@ -12,5 +12,7 @@
     = image_tag(@noticia.imagen_url(:medium))
     .textual-content
       = paragraph(@noticia.contenido)
+      - unless @noticia.link.empty?
+        = link_to @noticia.link
 
   = link_to 'Regresar', :back, class: 'button-back-cms'

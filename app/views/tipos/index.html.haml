@@ -16,14 +16,7 @@
         %h3.heading.next-title
           = link_to tipo.nombre, reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, tipo)
           %p
-            - tipo.productos.each do |producto|
-              = producto.nombre
-
-      - @tipos.each do |tipo|
-        %h3.heading.next-title
-          = link_to tipo.nombre, reino_categoria_subcategoria_tipo_subtipos_path(@reino, @categoria, @subcategoria, tipo)
-          %p
-            - tipo.productos.each do |producto|
+            - Producto.where("tipo_id = ?", tipo).each do |producto|
               = producto.nombre
 
         - if current_admin
