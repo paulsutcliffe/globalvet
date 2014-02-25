@@ -2,7 +2,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-set :rvm_ruby_string, '1.9.3'
+set :rvm_ruby_string, '2.1.0'
 set :rvm_type, :user  # Don't use system-wide RVM
 
 server "rubyonrailsperu.com", :web, :app, :db, primary: true
@@ -16,6 +16,8 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:paulsutcliffe/#{application}.git"
 set :branch, "master"
+
+set :keep_releases, 1
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
