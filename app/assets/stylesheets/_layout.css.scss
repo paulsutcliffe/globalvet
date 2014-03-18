@@ -231,7 +231,6 @@ form {margin: 0}
 #noticias.index .content .textual-content p {color: #646363}
 .date-item {font-size: 11px; position: relative; top: -1px; color: #646363}
 #noticias.index .textual-content h3.title {font-weight: bolder}
-#tipos{.textual-content{width: 40%;}}
 
 #noticias.index .info.resumen .title {padding-bottom: 0; font-size: 14px; line-height: 120%}
 
@@ -392,4 +391,5 @@ h1, h2, h3, h4, h5, h6 {font-weight: 300}
 
 #quienes_somos #page-content .content {padding-top: 40px}
 
+.textual-content{width: 40%;}
 #noticias.index #page-content {padding-top: 125px}
