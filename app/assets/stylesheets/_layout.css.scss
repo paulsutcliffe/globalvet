@@ -346,7 +346,7 @@ font-size: 12px}
 .product-page {
   .presentacion {position: relative;
     &:after {
-    content: url('/assets/cuadro-animal.png'); @include absolute(left, top, -8px, 26px)}
+    @include absolute(left, top, -8px, 26px)}
 
     img, .textual-content {margin-top: 26px; margin-left: -8px}
 
@@ -358,7 +358,7 @@ font-size: 12px}
 #reinos.index .presentacion:after {display: none}
 .animales-index {position: relative; width: 900px; max-width: 900px; left: -52px}
 
-#page-content > .heading {font-size: 22px !important}
+#page-content > .heading {font-size: 21px !important}
 .button-back-cms {float: right}
 .animal-list {
   margin: 0; position: relative; left: 0px; width: 900px;
@@ -390,6 +390,11 @@ h1, h2, h3, h4, h5, h6 {font-weight: 300}
 .ul-paragraph {margin-left: 0; li {display: inline; padding: 0; list-style: none; }}
 
 #quienes_somos #page-content .content {padding-top: 40px}
-
+.font-comfortaa-7, .title-1, .title, .carousel .carousel-caption, .title a, .carousel .carousel-caption a, .product-page.logged-in .heading, .page-title {
+    font-weight: 100 !important;
+}
 .textual-content{width: 40%;}
 #noticias.index #page-content {padding-top: 125px}
+
+.heading{img{vertical-align: middle !important;}}
+.pdf-label{font-family:$pt;}
