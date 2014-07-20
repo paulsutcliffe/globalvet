@@ -43,4 +43,7 @@ Globalvet::Application.routes.draw do
 
   root to: 'home#index'
 
+  match "/cpanel" => redirect("http://cpanel.globalvetgroup.com:2082"), :as => :cpanel
+  match "/webmail" => redirect("http://webmail.globalvetgroup.com:2095"), :as => :webmail
+
 end
