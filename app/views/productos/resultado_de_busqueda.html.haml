@@ -9,7 +9,7 @@
       =  pluralize(@productos.size, 'resultado') + ' para '
     %b
       = params[:busqueda]
-  .content.presentacion.titulo-parrafo
+  .content.resumenes.titulo-parrafo
     - @productos.each do |producto|
       .info.resumen
         = link_to image_tag(producto.imagen_url(:thumb_busqueda)), reino_categoria_subcategoria_tipo_producto_path(producto.reino, producto.tipo.subcategoria.categoria, producto.tipo.subcategoria, producto.tipo, producto)
