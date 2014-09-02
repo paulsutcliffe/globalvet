@@ -10,8 +10,9 @@
   .content.img-gallery
     - @marcas.each do |marca|
       .img-wrapper
-        = link_to image_tag(marca.logo_url(:medium), alt: marca.link), marca.link, class: cycle('col-1', 'col-2', 'col-3', 'col-4'), target: '_blank'
-
+        = link_to marca.link, class: cycle('col-1', 'col-2', 'col-3', 'col-4'), target: '_blank' do
+          = image_tag(marca.logo_url(:medium), alt: marca.link)
+          %h5.click Click Aquí
         - if current_admin
           .admin.iterate
             = link_to 'Editar', edit_marca_path(marca), class: 'button-update'

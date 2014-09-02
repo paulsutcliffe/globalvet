@@ -272,8 +272,9 @@ form {
 .img-gallery {
   .img-wrapper {
     @include inline-block; margin-right: 25px; position: relative;
-    @include size(165px, 158px);
+    @include size(165px, 185px);
     .admin.iterate {@include absolute(right, bottom, 0, 0)}
+    .click{text-align: center; margin-top: 5px; margin-bottom: 20px;}
   }
 }
 
