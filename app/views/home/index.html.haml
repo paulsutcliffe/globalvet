@@ -18,12 +18,15 @@
     .info.info-global-news
       %h3.title= link_to @infonews.title, @infonews.link
       %p= @infonews.content
-      = link_to 'Editar', edit_hometext_path(@infonews), class: 'button-update'
+      - if current_admin
+        = link_to 'Editar', edit_hometext_path(@infonews), class: 'button-update'
     .info.info-productos
       %h3.title= link_to @infoproductos.title, @infoproductos.link
       %p= @infoproductos.content
-      = link_to 'Editar', edit_hometext_path(@infoproductos), class: 'button-update'
+      - if current_admin
+        = link_to 'Editar', edit_hometext_path(@infoproductos), class: 'button-update'
     .info.info-marcas
       %h3.title= link_to @infomarcas.title, @infomarcas.link
       %p= @infomarcas.content
-      = link_to 'Editar', edit_hometext_path(@infomarcas), class: 'button-update'
+      - if current_admin
+        = link_to 'Editar', edit_hometext_path(@infomarcas), class: 'button-update'

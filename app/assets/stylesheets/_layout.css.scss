@@ -416,6 +416,9 @@ h1, h2, h3, h4, h5, h6 {font-weight: 300}
 }
 #productos{
   .textual-content{width: 60%;}
+  .heading > p {
+    font-size: 16px;
+  }
 }
 
 #noticias.index #page-content {padding-top: 125px}
