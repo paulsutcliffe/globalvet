@@ -1,0 +1,23 @@
+%h1 Listing hometexts
+
+%table
+  %tr
+    %th Title
+    %th Content
+    %th Link
+    %th
+    %th
+    %th
+
+  - @hometexts.each do |hometext|
+    %tr
+      %td= hometext.title
+      %td= hometext.content
+      %td= hometext.link
+      %td= link_to 'Show', hometext
+      %td= link_to 'Edit', edit_hometext_path(hometext)
+      %td= link_to 'Destroy', hometext, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Hometext', new_hometext_path

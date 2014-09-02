@@ -274,7 +274,7 @@ form {
     @include inline-block; margin-right: 25px; position: relative;
     @include size(165px, 185px);
     .admin.iterate {@include absolute(right, bottom, 0, 0)}
-    .click{text-align: center; margin-top: 5px; margin-bottom: 20px;}
+    .click{color: #646363; text-align: center; margin-top: 5px; margin-bottom: 20px;}
   }
 }
 
@@ -369,7 +369,7 @@ font-size: 12px}
 #reinos.index .presentacion:after {display: none}
 .animales-index {position: relative; width: 900px; max-width: 900px; left: -52px}
 
-#page-content > .heading {font-size: 21px !important}
+#page-content > .heading {font-size: 20px !important}
 .button-back-cms {float: right}
 .animal-list {
   margin: 0; position: relative; left: 0px; width: 900px;
@@ -404,7 +404,20 @@ h1, h2, h3, h4, h5, h6 {font-weight: 300}
 .font-comfortaa-7, .title-1, .title, .carousel .carousel-caption, .title a, .carousel .carousel-caption a, .product-page.logged-in .heading, .page-title {
     font-weight: 100 !important;
 }
-.textual-content{width: 40%;}
+
+#noticias{
+  img{border: 2px solid #c32c01;}
+  .index{
+    .textual-content{width: 70%;}
+  }
+  .show{
+    .textual-content{width: 75%;}
+  }
+}
+#productos{
+  .textual-content{width: 60%;}
+}
+
 #noticias.index #page-content {padding-top: 125px}
 
 .heading{img{vertical-align: middle !important;}}

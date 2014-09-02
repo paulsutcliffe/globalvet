@@ -1,0 +1,7 @@
+#page-content
+  %h1.page-title
+    = page_title!('Editando ' + @hometext.title)
+
+  = render 'form'
+
+  = link_to 'Regresar', root_path

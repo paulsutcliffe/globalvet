@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @hometext.title
+%p
+  %b Content:
+  = @hometext.content
+%p
+  %b Link:
+  = @hometext.link
+
+= link_to 'Edit', edit_hometext_path(@hometext)
+\|
+= link_to 'Back', hometexts_path

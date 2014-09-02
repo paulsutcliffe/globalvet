@@ -1,5 +1,8 @@
 Globalvet::Application.routes.draw do
 
+  resources :hometexts
+
+
   # mount Soulmate::Server, :at => "/sm"
 
   get "productos/autocompletar_nombre_de_producto"
